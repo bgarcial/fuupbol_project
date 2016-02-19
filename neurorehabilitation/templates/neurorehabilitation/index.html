@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+<!--
+The idea is that index.html inherits from base.html (it uses all its contents) except for the blocks marked
+with these special template tags. In that case, it substitutes the content inside the template tag of index.html
+into the corresponding block in base.html.
+-->
+{% block head_title %}Home{% endblock %}
+

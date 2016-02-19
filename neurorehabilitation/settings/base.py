@@ -59,7 +59,10 @@ ROOT_URLCONF = 'neurorehabilitation.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+
+        # Django will look for templates located at a folder named templates inside each app and inside the neurorehabilitation/templates folder
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,4 +125,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+# This line tells Django to look for static files in a folder named static inside each of our apps.
 STATIC_URL = '/static/'
+
+# With this configuration, Django will look for static files in a folder named static inside each app and into the neurorehabilitation/static folder
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
