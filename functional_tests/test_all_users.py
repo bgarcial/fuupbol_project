@@ -50,6 +50,13 @@ class NewVisitorTest(StaticLiveServerTestCase):
         self.assertEqual(h1.value_of_css_property("color"),
                          "rgba(200, 50, 255, 1)")
 
+    # Check that when we goig to specific url, we don't see the Not Found 404 page
+    def test_home_files(self):
+        self.browser.get(self.live_server_url + "/robots.txt")
+        self.assertNotIn("Not Found", self.browser.title)
+        self.browser.get(self.live_server_url + "/humans.txt")
+        self.assertNotIn("Not Found", self.browser.title)
+
     '''
     Testcase. With this method I ask open the broswser  and the
     url http://localhost:8000 and in the assert we says if
@@ -68,9 +75,10 @@ This function launch the Test runner unittest that identify the
 differents tests defined through of methods that start with the test prefix
 such as test_it_worked()
 """
-
+'''
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
+'''
 
 """
 The setUp() and tearDown() methods are executed in the beginning and in the end
