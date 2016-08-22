@@ -1,4 +1,4 @@
-Django
+Django==1.9.7
 psycopg2
 boto
 django-boto
