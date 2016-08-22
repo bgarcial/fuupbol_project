@@ -1,2 +1,12 @@
-Django==1.9.2
-psycopg2==2.6.1
+Django
+psycopg2
+boto
+django-boto
+django-crispy-forms
+django-filter
+django-multiselectfield
+django-storages-redux
+djangorestframework
+Markdown
+Pillow
+django-extensions

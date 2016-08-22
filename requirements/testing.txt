@@ -1,5 +1,5 @@
 -r base.txt
-selenium==2.52.0
-coverage==4.0.3
+selenium
+coverage
 
 
