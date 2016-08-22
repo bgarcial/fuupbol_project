@@ -77,7 +77,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     is_player = models.BooleanField(default=False)
 
-    '''
+    
     team = models.ForeignKey(
         'games_information.Team',
         null=True,
@@ -93,6 +93,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name='Equipos en los que juega',
 
     )
+    '''
 
     email = models.EmailField(max_length=254)
 
@@ -102,7 +103,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         help_text='Designates whether the user can log into this admin site.')
     
     is_active = models.BooleanField(default=True)
-
     date_joined = models.DateTimeField(default=timezone.now)
 
     
