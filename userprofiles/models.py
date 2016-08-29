@@ -5,6 +5,7 @@ from django.db import models
 from django.utils import timezone
 from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, UserManager, PermissionsMixin
+from .managers import UserManager
 
 #Django Third packages
 from multiselectfield import MultiSelectField
@@ -95,7 +96,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
     '''
 
-    email = models.EmailField(max_length=254)
+    email = models.EmailField(max_length=254, unique=True)
 
 
     is_staff = models.BooleanField(
@@ -109,8 +110,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     #is_coach = models.BooleanField(default=False)
     #is_viewer = models.BooleanField(default=False)
 
-    USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['email',]
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
     objects = UserManager()
 
     position = MultiSelectField(
