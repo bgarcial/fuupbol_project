@@ -9,4 +9,4 @@ class FieldAdmin(admin.ModelAdmin):
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ('id','name','image','modality','place_origin', 'game_day')
+    list_display = ('name','image','modality','place_origin', 'game_day')

@@ -40,7 +40,7 @@ urlpatterns = [
         home_files, name='home-files'),
 
     # Wire up our API using automatic URL routing.
-    url(r'^api/v1/', include(router.urls)),
+    url(r'^api/', include(router.urls)),
 
     # If you're intending to use the browsable API you'll probably also want to add REST framework's
     # login and logout views.
