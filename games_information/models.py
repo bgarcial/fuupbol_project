@@ -56,6 +56,8 @@ class Field(models.Model):
 
 class Team(models.Model):
 
+
+    
     MODALITY_11 = 'Fútbol 11'
     MODALITY_8 = 'Fútbol 8'
     MODALITY_7 = 'Fútbol 7'
@@ -64,6 +66,7 @@ class Team(models.Model):
     #FUTSAL_MODALITY = 'Fútbol de salón'
 
     MODALITY_CHOICES = (
+
         (MODALITY_11, u'Fútbol 11'),
         (MODALITY_8, u'Fútbol 8'),
         (MODALITY_7, u'Fútbol 7'),
@@ -84,7 +87,8 @@ class Team(models.Model):
     modality = MultiSelectField(
         max_length=255,
         choices=MODALITY_CHOICES,
-        blank=False,
+        blank=True,
+        null=True
 
     )
     #listohome_field = models.ManyToManyField(Field)
