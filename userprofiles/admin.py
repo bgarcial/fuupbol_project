@@ -29,7 +29,7 @@ class CustomUserAdmin(UserAdmin):
                     #'is_superuser',
                     'is_player',
                     'position',
-                    'team',
+                    #'team',
                     'weight',
                     'height',
                     'nickname',

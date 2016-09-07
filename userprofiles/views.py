@@ -16,6 +16,6 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
     #filter_backends = (filters.DjangoFilterBackend,)
-    filter_fields = ('username','is_player', 'first_name','last_name','email','team',)
+    filter_fields = ('username','is_player', 'first_name','last_name','email',)
 
     

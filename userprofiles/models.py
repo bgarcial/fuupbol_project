@@ -79,6 +79,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_player = models.BooleanField(default=False)
 
     
+    '''
     team = models.ForeignKey(
         'games_information.Team',
         null=True,
@@ -86,7 +87,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name='Equipo en el que juega',
 
     )
-    '''
+   
     team = models.ManyToManyField(
         'games_information.Team',
         #null=True,
@@ -157,4 +158,9 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.first_name
 
     
+    def __str__(self): 
+
+        player_full_name = '%s %s %s' % (self.nickname,self.first_name, self.last_name)
+        return player_full_name.strip()
+        #return "{},{},{}".format(self.nickname, self.first_name, self.last_name )
 

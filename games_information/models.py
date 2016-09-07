@@ -78,13 +78,16 @@ class Team(models.Model):
                             unique=True, 
                             db_index=True,)
     image = models.ImageField(upload_to='fields', blank=True, verbose_name='Imagen de la plantilla o escudo')
+
+    players = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='players')
+
     modality = MultiSelectField(
         max_length=255,
         choices=MODALITY_CHOICES,
         blank=False,
 
     )
-    home_field = models.ManyToManyField(Field)
+    #listohome_field = models.ManyToManyField(Field)
     place_origin = models.CharField(max_length=150, blank=False, verbose_name='Lugar de origen')
     #players = Hacer un query de los jugadores
     game_day = models.CharField(max_length=150, blank=False, verbose_name='Reservas o frecuencia de juego')

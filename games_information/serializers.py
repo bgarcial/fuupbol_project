@@ -10,7 +10,7 @@ class FieldSerializer(serializers.HyperlinkedModelSerializer):
 class TeamSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Team
-        fields = ('url','name','image','modality','place_origin','game_day',)
+        fields = ('url','name','image','players','modality','place_origin','game_day',)
         depth = 1
 
 class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer):
