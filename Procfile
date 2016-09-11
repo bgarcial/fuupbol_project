@@ -1,1 +1,1 @@
-web: gunicorn neurorehabilitation.wsgi --log-file -
+web: gunicorn fuupbol.wsgi --log-file -
