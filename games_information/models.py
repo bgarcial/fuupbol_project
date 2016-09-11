@@ -82,7 +82,7 @@ class Team(models.Model):
                             db_index=True,)
     image = models.ImageField(upload_to='fields', blank=True, verbose_name='Imagen de la plantilla o escudo')
 
-    players = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='players')
+    players = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='players', blank=True,)
 
     modality = MultiSelectField(
         max_length=255,
