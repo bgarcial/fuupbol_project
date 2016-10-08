@@ -99,7 +99,7 @@ class Team(models.Model):
 
 
     def __str__(self):
-        return '%s %s' % (self.name, self.modality)
+        return '%s' % (self.name)
 
 
 class Match(models.Model):
