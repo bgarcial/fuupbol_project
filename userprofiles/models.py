@@ -21,7 +21,7 @@ from multiselectfield import MultiSelectField
 class User(AbstractBaseUser, PermissionsMixin):
     # Using PermissionsMixin
     # http://stackoverflow.com/questions/31370333/custom-django-user-object-has-no-attribute-has-module-perms
-    
+
     GOALKEEPER_POSITION = 'GOALKEEPER'
     CENTRAL_DEFENDER_POSITION = 'DEFENDER'
     RIGHT_DEFENDER_POSITION = 'RIGHT_DEFENDER'
@@ -61,13 +61,13 @@ class User(AbstractBaseUser, PermissionsMixin):
     # http://stackoverflow.com/questions/25239164/issue-with-createsuperuser-when-implementing-custom-user-model     required ...
 
     first_name=models.CharField(max_length=50, blank=False,)
-    
+
     last_name=models.CharField(max_length=50, blank=False,)
-    
+
     age = models.PositiveSmallIntegerField(null=True)
-        
+
     photo = models.ImageField(upload_to='avatars', null=False, blank=False)
-    
+
     sex = models.CharField(
         choices=SEX_CHOICES,
         max_length=12,
@@ -78,8 +78,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     is_player = models.BooleanField(default=False)
 
-    
-    
+
+
     team = models.ForeignKey(
         'games_information.Team',
         null=True,
@@ -103,11 +103,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(
         default=True,
         help_text='Designates whether the user can log into this admin site.')
-    
+
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
 
-    
+
     #is_coach = models.BooleanField(default=False)
     #is_viewer = models.BooleanField(default=False)
 
@@ -123,23 +123,23 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
 
     weight = models.DecimalField(max_digits=5,decimal_places=2, null=True)
-    
+
     height = models.DecimalField(max_digits=5,decimal_places=2,null=True)
-    
+
     nickname = models.CharField(max_length=64,blank=True)
-    
+
     number_matches = models.PositiveIntegerField(null=True)
-    
+
     accomplished_matches = models.PositiveIntegerField(null=True)
 
     time_available = models.CharField(max_length=255, blank=True)
-    
+
     leg_profile = models.CharField(max_length=64, blank=True)
-    
+
     number_shirt_preferred = models.CharField(max_length=255, blank=True)
-    
+
     team_support = models.CharField(max_length=255, blank=True)
-    
+
     player_preferred = models.CharField(max_length=255, blank=True)
 
     class Meta:
@@ -157,8 +157,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         "Returns the short name for the user."
         return self.first_name
 
-    
-    def __str__(self): 
+
+    def __str__(self):
 
         player_full_name = '%s %s %s' % (self.nickname,self.first_name, self.last_name)
         return player_full_name.strip()

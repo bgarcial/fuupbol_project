@@ -57,7 +57,7 @@ class Field(models.Model):
 class Team(models.Model):
 
 
-    
+
     MODALITY_11 = 'Fútbol 11'
     MODALITY_8 = 'Fútbol 8'
     MODALITY_7 = 'Fútbol 7'
@@ -78,7 +78,7 @@ class Team(models.Model):
     name = models.CharField(max_length=64,
                             blank=True,
                             primary_key=True,
-                            unique=True, 
+                            unique=True,
                             db_index=True,)
     image = models.ImageField(upload_to='fields', blank=True, verbose_name='Imagen de la plantilla o escudo')
 
