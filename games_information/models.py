@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from multiselectfield import MultiSelectField
+from django.utils import timezone
 
 # Create your models here.
 
@@ -99,6 +100,41 @@ class Team(models.Model):
 
     def __str__(self):
         return '%s %s' % (self.name, self.modality)
+
+
+class Match(models.Model):
+
+    name = models.CharField(max_length=255, null=False, )
+
+    home_team = models.ForeignKey(
+        'games_information.Team',
+        null=False,
+        blank=False,
+        verbose_name='Equipo local',
+        related_name='hometeam'
+    )
+
+    away_team = models.ForeignKey(
+        'games_information.Team',
+        null=False,
+        blank=False,
+        verbose_name='Equipo visitante',
+        #related_name=''
+    )
+
+    field = models.ForeignKey(
+        'games_information.Field',
+        null=False,
+        blank=False,
+        verbose_name='Lugar'
+
+    )
+
+    match_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return '%s' % (self.name)
+
 
 class TrainingCompetitionCenter(models.Model):
     name = models.CharField(max_length=64,blank=True)

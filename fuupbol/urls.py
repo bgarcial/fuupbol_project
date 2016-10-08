@@ -18,7 +18,8 @@ from django.contrib import admin
 
 from rest_framework import routers
 from userprofiles.views import (UserViewSet,)
-from games_information.views import (FieldViewSet, TrainingCompetitionCenterViewSet, TeamViewSet,)
+from games_information.views import (FieldViewSet,
+    TrainingCompetitionCenterViewSet, TeamViewSet, MatchViewSet)
 
 
 from .views import home, home_files
@@ -29,6 +30,7 @@ router.register(r'users', UserViewSet)
 router.register(r'teams', TeamViewSet)
 router.register(r'fields', FieldViewSet)
 router.register(r'trainingcompetitioncenter', TrainingCompetitionCenterViewSet)
+router.register(r'matchs', MatchViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

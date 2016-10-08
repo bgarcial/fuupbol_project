@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Field, Team, Match
+from .models import Field, Team, Match, TrainingCompetitionCenter
 # Register your models here.
 
 @admin.register(Field)
@@ -12,5 +12,9 @@ class TeamAdmin(admin.ModelAdmin):
     list_display = ('name','image','modality','place_origin', 'game_day')
 
 @admin.register(Match)
-class TeamMatch(admin.ModelAdmin):
-    list_display = ('id','home_team','away_team','field', 'match_date')
+class MatchAdmin(admin.ModelAdmin):
+    list_display = ('id','name','home_team','away_team','field', 'match_date')
+
+@admin.register(TrainingCompetitionCenter)
+class TrainingCompetitionCenterAdmin(admin.ModelAdmin):
+    list_display = ('id','name','location', 'owner')

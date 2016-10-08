@@ -1,20 +1,46 @@
-from .models import Field, TrainingCompetitionCenter, Team
+
+from .models import Field, TrainingCompetitionCenter, Team, Match
 from rest_framework import serializers
+from userprofiles.serializers import UserSerializer
 
 class FieldSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Field
         fields = ('url','id', 'name','field_type','modality','photo','location')
-        depth = 1
+        #depth = 1
 
 class TeamSerializer(serializers.HyperlinkedModelSerializer):
+
+    #players=serializers.HyperlinkedIdentityField(many=True,view_name='team-detail',)
+    players=UserSerializer(many=True)
+    def setup_eager_loading(queryset):
+       queryset = queryset.prefetch_related('players',)
+
+
     class Meta:
         model = Team
         fields = ('url','name','image','players','modality','place_origin','game_day',)
-        depth = 1
+        #depth = 1
 
 class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer):
+    fields = FieldSerializer(many=True)
+
+    def setup_eager_loading(queryset):
+       queryset = queryset.prefetch_related('fields',)
+
     class Meta:
         model = TrainingCompetitionCenter
-        fields = ('url','id', 'name', 'location','owner',)
-        depth = 1
+        fields = ('url','id', 'name', 'location','fields','owner',)
+
+
+class MatchSerializer(serializers.ModelSerializer):
+    field = serializers.StringRelatedField()
+
+
+    def setup_eager_loading(queryset):
+        queryset = queryset.select_related('field',)
+
+
+    class Meta:
+        model = Match
+        fields = ('url','id','name','home_team', 'away_team','field','match_date',)

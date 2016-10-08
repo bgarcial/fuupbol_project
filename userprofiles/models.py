@@ -57,7 +57,12 @@ class User(AbstractBaseUser, PermissionsMixin):
         ('Femenino', "Femenino"),
     )
 
-    username = models.CharField(max_length=15, unique=True, db_index=True, primary_key=True)
+    username = models.CharField(
+        max_length=15,
+        unique=True,
+        db_index=True,
+        primary_key=True
+    )
     # http://stackoverflow.com/questions/25239164/issue-with-createsuperuser-when-implementing-custom-user-model     required ...
 
     first_name=models.CharField(max_length=50, blank=False,)
