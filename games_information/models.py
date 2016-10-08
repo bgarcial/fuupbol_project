@@ -104,7 +104,6 @@ class Team(models.Model):
 
 class Match(models.Model):
 
-    name = models.CharField(max_length=255, null=False, )
 
     home_team = models.ForeignKey(
         'games_information.Team',
@@ -133,7 +132,8 @@ class Match(models.Model):
     match_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return '%s' % (self.name)
+        return "{} {} {} {}".format('Cotejo - ', self.home_team, 'vs.', self.away_team)
+        #return '%s' % (self.name)
 
 
 class TrainingCompetitionCenter(models.Model):

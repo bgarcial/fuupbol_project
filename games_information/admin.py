@@ -13,7 +13,7 @@ class TeamAdmin(admin.ModelAdmin):
 
 @admin.register(Match)
 class MatchAdmin(admin.ModelAdmin):
-    list_display = ('id','name','home_team','away_team','field', 'match_date')
+    list_display = ('id','home_team','away_team','field', 'match_date')
 
 @admin.register(TrainingCompetitionCenter)
 class TrainingCompetitionCenterAdmin(admin.ModelAdmin):
