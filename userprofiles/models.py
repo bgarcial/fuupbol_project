@@ -71,7 +71,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     age = models.PositiveSmallIntegerField(null=True)
 
-    photo = models.ImageField(upload_to='avatars', null=False, blank=False)
+    photo = models.ImageField(upload_to='avatars', null=True, blank=True)
 
     sex = models.CharField(
         choices=SEX_CHOICES,
