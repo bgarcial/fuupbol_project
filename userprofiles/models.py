@@ -133,9 +133,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     nickname = models.CharField(max_length=64,blank=True)
 
-    number_matches = models.PositiveIntegerField(null=True)
+    number_matches = models.PositiveIntegerField(null=True, blank=True)
 
-    accomplished_matches = models.PositiveIntegerField(null=True)
+    accomplished_matches = models.PositiveIntegerField(null=True,blank=True)
 
     time_available = models.CharField(max_length=255, blank=True)
 
