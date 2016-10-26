@@ -121,6 +121,8 @@ class Match(models.Model):
         #related_name=''
     )
 
+    check_match_away_team = models.BooleanField(default=False)
+
     field = models.ForeignKey(
         'games_information.Field',
         null=False,
