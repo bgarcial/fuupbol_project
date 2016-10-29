@@ -54,6 +54,7 @@ class Field(models.Model):
 
     def __str__(self):
         return '%s %s %s' % (self.name, self.field_type, self.location)
+        #return '%s' % (self.name,)
 
 class Team(models.Model):
 
@@ -75,6 +76,8 @@ class Team(models.Model):
         (MODALITY_5, u'Fútbol 5'),
     )
 
+
+
     #user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     name = models.CharField(max_length=64,
                             blank=True,
@@ -93,7 +96,13 @@ class Team(models.Model):
 
     )
     #listohome_field = models.ManyToManyField(Field)
-    place_origin = models.CharField(max_length=150, blank=False, verbose_name='Lugar de origen')
+    #place_origin = models.CharField(max_length=150, blank=True, verbose_name='Lugar de origen')
+
+    place_origin = models.ForeignKey(
+        'games_information.Field',
+        verbose_name='Lugar de origen',
+
+    )
     #players = Hacer un query de los jugadores
     game_day = models.CharField(max_length=150, blank=False, verbose_name='Reservas o frecuencia de juego')
 

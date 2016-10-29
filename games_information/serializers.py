@@ -13,8 +13,10 @@ class TeamSerializer(serializers.HyperlinkedModelSerializer):
 
     #players=serializers.HyperlinkedIdentityField(many=True,view_name='team-detail',)
     players=UserSerializer(many=True)
+    place_origin = serializers.StringRelatedField()
     def setup_eager_loading(queryset):
        queryset = queryset.prefetch_related('players',)
+       queryset = queryset.select_related('place_origin',)
 
 
     class Meta:
