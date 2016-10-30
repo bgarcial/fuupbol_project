@@ -117,7 +117,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     position = models.CharField(
         choices=POSITION_CHOICES,
         max_length=334,
-        default=False,
+        default=True,
         blank=False,
         verbose_name='Posición'
     )
