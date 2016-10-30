@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import (UserChangeForm,UserCreationForm)
 
 from .models import User
+#from checkboxselectmultiple.widgets import CheckboxSelectMultiple
 
 # Django use special forms to create and edit UserAdmin forms
 # due to these was thinked only for the django original user model
@@ -11,6 +12,7 @@ class CustomUserChangeForm(UserChangeForm):
         model = User
         widgets = {
             'sex': forms.RadioSelect,
+            #'position': CheckboxSelectMultiple,
         }
 
 class CustomUserCreationForm(UserCreationForm):

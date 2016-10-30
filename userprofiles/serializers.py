@@ -1,7 +1,7 @@
 from .models import User
 from rest_framework import serializers
 
-
+'''
 class Base64ImageField(serializers.ImageField):
     """
     A Django REST framework field for handling image-uploads through raw post data.
@@ -50,16 +50,17 @@ class Base64ImageField(serializers.ImageField):
         extension = "jpg" if extension == "jpeg" else extension
 
         return extension
-
+'''
 
 # Serializers define the API representation
 # Expose the model and their fields
 class UserSerializer(serializers.ModelSerializer):
     team = serializers.StringRelatedField()
+    '''
     photo = Base64ImageField(
         max_length=None, use_url=True,
     )
-
+    '''
 
 
     def setup_eager_loading(queryset):

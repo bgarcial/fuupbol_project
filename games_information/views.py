@@ -20,7 +20,7 @@ class TeamViewSet(viewsets.ModelViewSet):
     """
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
-    filter_fields = ('name','players','game_day',)
+    filter_fields = ('name','players','game_day','place_origin',)
 
 class TrainingCompetitionCenterViewSet(viewsets.ModelViewSet):
     """
@@ -35,3 +35,4 @@ class MatchViewSet(viewsets.ModelViewSet):
     """
     queryset = Match.objects.all()
     serializer_class = MatchSerializer
+    filter_fields = ('home_team','away_team',)

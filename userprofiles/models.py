@@ -6,9 +6,12 @@ from django.utils import timezone
 from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, UserManager, PermissionsMixin
 from .managers import UserManager
+from django import forms
 
 #Django Third packages
 from multiselectfield import MultiSelectField
+
+from checkboxselectmultiple.widgets import CheckboxSelectMultiple
 
 # Reason for use UserManager
 # http://stackoverflow.com/questions/14723099/attributeerror-manager-object-has-no-attribute-get-by-natural-key-error-in
@@ -22,35 +25,25 @@ class User(AbstractBaseUser, PermissionsMixin):
     # Using PermissionsMixin
     # http://stackoverflow.com/questions/31370333/custom-django-user-object-has-no-attribute-has-module-perms
 
-    GOALKEEPER_POSITION = 'GOALKEEPER'
-    CENTRAL_DEFENDER_POSITION = 'DEFENDER'
-    RIGHT_DEFENDER_POSITION = 'RIGHT_DEFENDER'
-    LEFT_DEFENDER_POSITION = 'LEFT_DEFENDER'
-    MIDFIELDER_FORWARD_POSITION = 'MIDFIELDER_FORWARD'
-    MIDFIELDER_CENTER_POSITION = 'MIDFIELDER_CENTER'
-    MIDFIELDER_DEFENSIVE_POSITION = 'MIDFIELDER_DEFENSIVE'
-    MIDFIELDER_LEFT_POSITION = 'MIDFIELDER_LEFT'
-    MIDFIELDER_RIGHT_POSITION = 'MIDFIELDER_RIGHT'
-    FORWARD_CENTER_POSITION = 'FORWARD_CENTER'
-    FORWARD_RIGHT_POSITION = 'FORWARD_RIGHT'
-    FORWARD_LEFT_POSITION = 'FORWARD_LEFT'
-    SECOND_FORWARD_POSITION = 'SECOND_FORWARD'
 
     POSITION_CHOICES = (
-        (GOALKEEPER_POSITION, u'Portero - PT'),
-        (CENTRAL_DEFENDER_POSITION, u'Defensa Central - DFC'),
-        (RIGHT_DEFENDER_POSITION, u'Defensa Lateral Derecho - LD'),
-        (LEFT_DEFENDER_POSITION, u'Defensa Lateral Izquierdo- LI'),
-        (MIDFIELDER_FORWARD_POSITION, u'Media Punta (por el centro adelantado) - MP'),
-        (MIDFIELDER_CENTER_POSITION, u'Medio Centro (en el centro) - MC'),
-        (MIDFIELDER_DEFENSIVE_POSITION, u'Medio Campo Defensivo - MCD'),
-        (MIDFIELDER_LEFT_POSITION, u'Medio Izquierda - MI'),
-        (MIDFIELDER_RIGHT_POSITION, u'Medio Derecha - MD'),
-        (FORWARD_CENTER_POSITION, u'Delantero Centro (siempre pendientes de meter goles) - DC'),
-        (FORWARD_RIGHT_POSITION, u'Extremo Derecho (los más adelantados por la banda) - ED'),
-        (FORWARD_LEFT_POSITION, u'Extremo Izquierdo  - EI'),
-        (SECOND_FORWARD_POSITION, u'Segundo Delantero - SD'),
+        ('Portero', u'Portero'),
+        ('Defensa Central', u'Defensa Central'),
+        ('Defensa Lateral Derecho', u'Defensa Lateral Derecho'),
+        ('Defensa Lateral Izquierdo', u'Defensa Lateral Izquierdo'),
+        ('Media Punta (por el centro adelantado)', u'Media Punta (por el centro adelantado)'),
+        ('Medio Centro (en el centro)', u'Medio Centro (en el centro)'),
+        ('Medio Campo Defensivo', u'Medio Campo Defensivo'),
+        ('Medio Izquierda', u'Medio Izquierda'),
+        ('Medio Derecha', u'Medio Derecha'),
+        ('Delantero Centro (siempre pendientes de meter goles)', u'Delantero Centro (siempre pendientes de meter goles)'),
+        ('Extremo Derecho (los más adelantados por la banda)', u'Extremo Derecho (los más adelantados por la banda)'),
+        ('Extremo Izquierdo', u'Extremo Izquierdo'),
+        ('Segundo Delantero', u'Segundo Delantero'),
     )
+
+
+
 
     SEX_CHOICES = (
         ('Masculino', "Masculino"),
@@ -71,7 +64,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     age = models.PositiveSmallIntegerField(null=True)
 
-    photo = models.ImageField(upload_to='avatars', blank=True)
+    photo = models.ImageField(upload_to='avatars', blank=True, null=True)
 
     sex = models.CharField(
         choices=SEX_CHOICES,
@@ -120,12 +113,29 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['username']
     objects = UserManager()
 
+
+    position = models.CharField(
+        choices=POSITION_CHOICES,
+        max_length=334,
+        default=False,
+        blank=False,
+        verbose_name='POsicion'
+    )
+    '''
+
     position = MultiSelectField(
         max_length=255,
         choices=POSITION_CHOICES,
         blank=False,
+        null=True,
 
     )
+
+    position = forms.MultipleChoiceField(
+        choices=POSITION_CHOICES,
+        widget=CheckboxSelectMultiple
+    )
+    '''
 
     weight = models.DecimalField(max_digits=5,decimal_places=2, null=True)
 

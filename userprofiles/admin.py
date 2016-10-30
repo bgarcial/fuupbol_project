@@ -4,12 +4,14 @@ from django.contrib.auth.admin import UserAdmin
 
 from .models import (User,)
 from .forms import CustomUserChangeForm, CustomUserCreationForm
+from checkboxselectmultiple.admin import CheckboxSelectMultipleAdmin
+
 
 # Register your models here.
 
 # Inherit of the original UserAdmin for use the customized forms
 
-class CustomUserAdmin(UserAdmin):
+class CustomUserAdmin(UserAdmin,):
     form = CustomUserChangeForm
     add_form = CustomUserCreationForm
     fieldsets = UserAdmin.fieldsets + (
@@ -60,7 +62,7 @@ class UserAdmin(CustomUserAdmin):
     # list_display = ('photo',)
 
 
-    list_display = ('username','password','first_name','last_name','age','sex', 
+    list_display = ('username','password','first_name','last_name','age','sex',
         'photo','email','is_player','position','is_staff','is_active','is_superuser',
         'is_player','weight','nickname','number_matches','accomplished_matches',
         'time_available','leg_profile','number_shirt_preferred','team_support',
