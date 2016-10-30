@@ -4,12 +4,13 @@ from django.contrib.auth.admin import UserAdmin
 
 from .models import (User,)
 from .forms import CustomUserChangeForm, CustomUserCreationForm
-from checkboxselectmultiple.admin import CheckboxSelectMultipleAdmin
+#from checkboxselectmultiple.admin import CheckboxSelectMultipleAdmin
 
 
 # Register your models here.
 
 # Inherit of the original UserAdmin for use the customized forms
+# CheckboxSelectMultipleAdmin
 
 class CustomUserAdmin(UserAdmin,):
     form = CustomUserChangeForm
