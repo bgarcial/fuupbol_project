@@ -98,6 +98,7 @@ class Team(models.Model):
 
     players = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='players', blank=True,)
 
+    '''
     modality = MultiSelectField(
         max_length=255,
         choices=MODALITY_CHOICES,
@@ -105,6 +106,15 @@ class Team(models.Model):
         null=True
 
     )
+    '''
+    modality = models.CharField(
+        choices=MODALITY_CHOICES,
+        max_length=40,
+        default=True,
+        blank=False,
+        verbose_name='Modalidad'
+    )
+
     #listohome_field = models.ManyToManyField(Field)
     #place_origin = models.CharField(max_length=150, blank=True, verbose_name='Lugar de origen')
 
