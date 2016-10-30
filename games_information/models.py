@@ -160,7 +160,7 @@ class Match(models.Model):
 
     )
 
-    match_date = models.DateTimeField(default=timezone.now)
+    match_date = models.DateTimeField(default=timezone.now, null=True)
 
     def __str__(self):
         return "{} {} {} {}".format('Cotejo - ', self.home_team, 'vs.', self.away_team)
