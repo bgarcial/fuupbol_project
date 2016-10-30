@@ -11,7 +11,7 @@ from django import forms
 #Django Third packages
 from multiselectfield import MultiSelectField
 
-from checkboxselectmultiple.widgets import CheckboxSelectMultiple
+#from checkboxselectmultiple.widgets import CheckboxSelectMultiple
 
 # Reason for use UserManager
 # http://stackoverflow.com/questions/14723099/attributeerror-manager-object-has-no-attribute-get-by-natural-key-error-in
