@@ -119,7 +119,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         max_length=334,
         default=False,
         blank=False,
-        verbose_name='POsicion'
+        verbose_name='Posición'
     )
     '''
 
