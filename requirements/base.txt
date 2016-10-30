@@ -2,7 +2,7 @@ Django==1.9.9
 psycopg2
 boto
 django-boto
-django-checkboxselectmultiple
+#django-checkboxselectmultiple
 django-crispy-forms
 django-filter
 django-multiselectfield==0.1.3
