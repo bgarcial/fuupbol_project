@@ -55,16 +55,17 @@ class Base64ImageField(serializers.ImageField):
 # Serializers define the API representation
 # Expose the model and their fields
 class UserSerializer(serializers.ModelSerializer):
-    team = serializers.StringRelatedField()
+    #team = serializers.StringRelatedField()
     '''
     photo = Base64ImageField(
         max_length=None, use_url=True,
     )
     '''
 
-
+    '''
     def setup_eager_loading(queryset):
       queryset = queryset.select_related('team',)
+    '''
 
     class Meta:
         model = User
