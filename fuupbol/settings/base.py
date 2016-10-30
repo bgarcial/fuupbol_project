@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third party apps
-    'checkboxselectmultiple',
+    #'checkboxselectmultiple',
     'rest_framework',
     'storages',
     'multiselectfield',
