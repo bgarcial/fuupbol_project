@@ -18,4 +18,4 @@ class UserViewSet(viewsets.ModelViewSet):
     #filter_backends = (filters.DjangoFilterBackend,)
     filter_fields = ('username','is_player', 'first_name','last_name','team','email',)
 
-    
+
