@@ -57,7 +57,7 @@ class Field(models.Model):
         blank=False,
         verbose_name='Modalidad'
     )
-    photo = models.ImageField(upload_to='fields', blank=True)
+    photo = models.ImageField(upload_to='fields', blank=True, null=True)
     location = models.CharField(max_length=150, blank=False)
 
 
