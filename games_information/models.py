@@ -41,11 +41,21 @@ class Field(models.Model):
         max_length=20,
         verbose_name=('Tipo de material/grama de la cancha')
     )
+
+    '''
     modality = MultiSelectField(
         max_length=255,
         choices=MODALITY_CHOICES,
         blank=False,
 
+    )
+    '''
+    modality = models.CharField(
+        choices=MODALITY_CHOICES,
+        max_length=40,
+        default=True,
+        blank=False,
+        verbose_name='Modalidad'
     )
     photo = models.ImageField(upload_to='fields', blank=True)
     location = models.CharField(max_length=150, blank=False)
