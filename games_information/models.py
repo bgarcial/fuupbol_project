@@ -94,7 +94,7 @@ class Team(models.Model):
                             primary_key=True,
                             unique=True,
                             db_index=True,)
-    image = models.ImageField(upload_to='fields', blank=True, verbose_name='Imagen de la plantilla o escudo')
+    image = models.ImageField(upload_to='fields',blank=True, null=True, verbose_name='Imagen de la plantilla o escudo')
 
     players = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='players', blank=True,)
 
