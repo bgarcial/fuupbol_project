@@ -58,8 +58,9 @@ INSTALLED_APPS = [
     'games_information.apps.GamesInformationConfig',
 ]
 
+# Read this http://www.django-rest-framework.org/topics/3.5-announcement/#djangofilterbackend
 REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
 
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
