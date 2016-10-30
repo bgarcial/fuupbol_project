@@ -29,7 +29,7 @@ router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'teams', TeamViewSet)
 router.register(r'fields', FieldViewSet)
-router.register(r'trainingcompetitioncenter', TrainingCompetitionCenterViewSet)
+#router.register(r'trainingcompetitioncenter', TrainingCompetitionCenterViewSet)
 router.register(r'matchs', MatchViewSet)
 
 urlpatterns = [

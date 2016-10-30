@@ -9,15 +9,17 @@ class FieldSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url','id', 'name','field_type','modality','photo','location')
         #depth = 1
 
-class TeamSerializer(serializers.HyperlinkedModelSerializer):
+class TeamSerializer(serializers.ModelSerializer):
 
-    #players=serializers.HyperlinkedIdentityField(many=True,view_name='team-detail',)
-    players=UserSerializer(many=True)
-    place_origin = serializers.StringRelatedField()
+
+    #players=UserSerializer(many=True)
+    #place_origin = serializers.StringRelatedField()
+
+    '''
     def setup_eager_loading(queryset):
        queryset = queryset.prefetch_related('players',)
        queryset = queryset.select_related('place_origin',)
-
+    '''
 
     class Meta:
         model = Team
@@ -36,12 +38,12 @@ class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer
 
 
 class MatchSerializer(serializers.ModelSerializer):
-    field = serializers.StringRelatedField()
+    #field = serializers.StringRelatedField()
 
-
+    '''
     def setup_eager_loading(queryset):
         queryset = queryset.select_related('field',)
-
+    '''
 
     class Meta:
         model = Match
