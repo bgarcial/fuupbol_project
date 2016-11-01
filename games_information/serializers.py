@@ -38,12 +38,12 @@ class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer
 
 
 class MatchSerializer(serializers.ModelSerializer):
-    #field = serializers.StringRelatedField()
+    field = serializers.StringRelatedField()
 
-    '''
+
     def setup_eager_loading(queryset):
         queryset = queryset.select_related('field',)
-    '''
+
 
     class Meta:
         model = Match

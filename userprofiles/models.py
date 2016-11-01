@@ -49,6 +49,16 @@ class User(AbstractBaseUser, PermissionsMixin):
         ('Masculino', "Masculino"),
         ('Femenino', "Femenino"),
     )
+    '''
+
+    SEX_CHOICES = [
+     (1, 'Masculino'),
+     (2, 'Femenino'),
+    ]
+
+
+    SEX_CHOICES_AND_EMPTY = [('','All')] + SEX_CHOICES
+    '''
 
     username = models.CharField(
         max_length=15,
@@ -70,7 +80,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         choices=SEX_CHOICES,
         max_length=12,
         default=False,
-        blank=False,
+        blank=True,
         verbose_name='Sexo'
     )
 
@@ -118,7 +128,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         choices=POSITION_CHOICES,
         max_length=334,
         default=True,
-        blank=False,
+        blank=True,
         verbose_name='Posición'
     )
     '''
