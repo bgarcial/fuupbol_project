@@ -47,4 +47,4 @@ class MatchSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Match
-        fields = ('url','id','home_team', 'away_team','field','match_date', 'check_match_away_team',)
+        fields = ('url','id','home_team', 'away_team','field','match_date', 'check_match_away_team','pending_challenge','accept_challenge','cancel_challenge')

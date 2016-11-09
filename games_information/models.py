@@ -151,6 +151,9 @@ class Match(models.Model):
     )
 
     check_match_away_team = models.BooleanField(default=False)
+    pending_challenge = models.BooleanField(default=False)
+    accept_challenge = models.BooleanField(default=False)
+    cancel_challenge = models.BooleanField(default=False)
 
     field = models.ForeignKey(
         'games_information.Field',
