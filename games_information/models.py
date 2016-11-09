@@ -133,6 +133,18 @@ class Team(models.Model):
 
 class Match(models.Model):
 
+    ACCEPTED_CHALLENGE = 'Aceptado'
+    PENDING_CHALLENGE = 'Pending'
+    CANCELLED_CHALLENGE = 'Cancelled'
+
+
+    STATUS_CHALLENGE_CHOICES = (
+
+        (ACCEPTED_CHALLENGE, u'Aceptado'),
+        (PENDING_CHALLENGE, u'Pending'),
+        (CANCELLED_CHALLENGE, u'Cancelled'),
+    )
+
 
     home_team = models.ForeignKey(
         'games_information.Team',
@@ -162,6 +174,14 @@ class Match(models.Model):
     )
 
     match_date = models.DateTimeField(default=timezone.now, null=True)
+
+    status_challenge = models.CharField(
+        choices=STATUS_CHALLENGE_CHOICES,
+        max_length=40,
+        default=True,
+        blank=False,
+        verbose_name='Estado del desafío'
+    )
 
     def __str__(self):
         return "{} {} {} {}".format('Cotejo - ', self.home_team, 'vs.', self.away_team)
