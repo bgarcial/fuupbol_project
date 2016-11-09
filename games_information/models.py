@@ -134,15 +134,15 @@ class Team(models.Model):
 class Match(models.Model):
 
     ACCEPTED_CHALLENGE = 'Aceptado'
-    PENDING_CHALLENGE = 'Pending'
-    CANCELLED_CHALLENGE = 'Cancelled'
+    PENDING_CHALLENGE = 'Pendiente'
+    CANCELLED_CHALLENGE = 'Cancelado'
 
 
     STATUS_CHALLENGE_CHOICES = (
 
         (ACCEPTED_CHALLENGE, u'Aceptado'),
-        (PENDING_CHALLENGE, u'Pending'),
-        (CANCELLED_CHALLENGE, u'Cancelled'),
+        (PENDING_CHALLENGE, u'Pendiente'),
+        (CANCELLED_CHALLENGE, u'Cancelado'),
     )
 
 
