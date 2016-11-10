@@ -123,7 +123,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['username']
     objects = UserManager()
 
+    position = models.CharField(max_length=255)
 
+    ''' este es
     position = models.CharField(
         choices=POSITION_CHOICES,
         max_length=334,
@@ -131,7 +133,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         blank=True,
         verbose_name='Posición'
     )
-    '''
+
 
     position = MultiSelectField(
         max_length=255,
