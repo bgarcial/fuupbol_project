@@ -61,6 +61,7 @@ class CustomUserAdmin(UserAdmin,):
 @admin.register(User)
 class UserAdmin(CustomUserAdmin):
     # list_display = ('photo',)
+    form = CustomUserChangeForm
 
 
     list_display = ('username','password','first_name','last_name','age','sex',

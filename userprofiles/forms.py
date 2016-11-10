@@ -8,12 +8,19 @@ from .models import User
 # due to these was thinked only for the django original user model
 # and here  we are using a custom django user model with Abstract
 class CustomUserChangeForm(UserChangeForm):
+
+    position = forms.MultipleChoiceField(
+        label='Posición en la que juega',
+        widget=forms.CheckboxSelectMultiple(),
+        choices=User.POSITION_CHOICES, initial=None)
+
     class Meta(UserChangeForm.Meta):
         model = User
         widgets = {
             'sex': forms.RadioSelect,
             #'position': CheckboxSelectMultiple,
         }
+        fields= ('position',)
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
