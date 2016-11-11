@@ -5,7 +5,7 @@
         "home_team": "San Francis",
         "away_team": "Niupi",
         "check_match_away_team": true,
-        "field": 1,
+        "field": "Stanford Bridge",
         "match_date": "2016-10-30T12:33:25Z",
         "status_challenge": "Pendiente"
     }
@@ -16,7 +16,7 @@
         "home_team": "San Francis",
         "away_team": "Manchester United",
         "check_match_away_team": false,
-        "field": 1,
+        "field": "Atanasio Girardot",
         "match_date": "2016-10-30T13:35:04.105Z",
         "status_challenge": "Aceptado"
     }
@@ -27,7 +27,7 @@
         "home_team": "Manchester United",
         "away_team": "Alav\u00e9s",
         "check_match_away_team": false,
-        "field": 2,
+        "field": "Chalacas Gol",
         "match_date": "2016-12-31T21:30:00Z",
         "status_challenge": "Pendiente"
     }
@@ -38,7 +38,7 @@
         "home_team": "Niupi",
         "away_team": "Manchester United",
         "check_match_away_team": false,
-        "field": 2,
+        "field": "La Bombonera",
         "match_date": "2016-11-10T15:00:00Z",
         "status_challenge": "Aceptado"
     }
@@ -49,7 +49,7 @@
         "home_team": "Alav\u00e9s",
         "away_team": "Manchester United",
         "check_match_away_team": false,
-        "field": 6,
+        "field": "La Jaula del Angel",
         "match_date": "2016-11-02T18:00:00Z",
         "status_challenge": "Aceptado"
     }
@@ -60,7 +60,7 @@
         "home_team": "Manchester United",
         "away_team": "Niupi",
         "check_match_away_team": true,
-        "field": 4,
+        "field": "Manuel Murillo Toro",
         "match_date": "2016-10-13T11:09:00Z",
         "status_challenge": "Cancelado"
     }
@@ -71,7 +71,7 @@
         "home_team": "San Francis",
         "away_team": "Alav\u00e9s",
         "check_match_away_team": false,
-        "field": 20,
+        "field": "Aristigol",
         "match_date": "2016-11-01T04:07:42Z",
         "status_challenge": "Pendiente"
     }
@@ -82,7 +82,7 @@
         "home_team": "Manchester United",
         "away_team": "Niupi",
         "check_match_away_team": false,
-        "field": 10,
+        "field": "Sport Roof",
         "match_date": "2016-11-10T15:00:00Z",
         "status_challenge": "Aceptado"
     }
@@ -93,7 +93,7 @@
         "home_team": "Manchester United",
         "away_team": "San Francis",
         "check_match_away_team": false,
-        "field": 1,
+        "field": "Envigol",
         "match_date": "2016-11-13T22:46:31Z",
         "status_challenge": "Pendiente"
     }
@@ -104,7 +104,7 @@
         "home_team": "Manchester United",
         "away_team": "San Francis",
         "check_match_away_team": false,
-        "field": 1,
+        "field": "Elite del F\u00fatbol",
         "match_date": "2016-11-06T21:21:19Z",
         "status_challenge": "Cancelado"
     }
@@ -115,7 +115,7 @@
         "home_team": "Aston Huila",
         "away_team": "Niupi",
         "check_match_away_team": false,
-        "field": 21,
+        "field": "Los Estadios",
         "match_date": "2016-11-19T01:00:23Z",
         "status_challenge": "Cancelado"
     }

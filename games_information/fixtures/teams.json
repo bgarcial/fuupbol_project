@@ -4,7 +4,7 @@
     "fields": {
         "image": "",
         "modality": "F\u00fatbol 7",
-        "place_origin": 5,
+        "place_origin": "Se\u00f1or Gol",
         "game_day": "Miercoles",
         "players": []
     }
@@ -14,7 +14,7 @@
     "fields": {
         "image": "fields/Aston_Huila.png",
         "modality": "F\u00fatbol 7",
-        "place_origin": 2,
+        "place_origin": "Chalacas Gol",
         "game_day": "Jueves",
         "players": []
     }
@@ -24,9 +24,9 @@
     "fields": {
         "image": "",
         "modality": "F\u00fatbol 7",
-        "place_origin": 5,
+        "place_origin": "La Bombonera",
         "game_day": "Sabado",
-        "players": ["pogba", "oliver", "benji"]
+        "players": []
     }
 }, {
     "model": "games_information.team",
@@ -34,9 +34,9 @@
     "fields": {
         "image": "",
         "modality": "F\u00fatbol 11",
-        "place_origin": 6,
+        "place_origin": "La Jaula del Angel",
         "game_day": "Domingo",
-        "players": ["oliver"]
+        "players": []
     }
 }, {
     "model": "games_information.team",
@@ -44,8 +44,8 @@
     "fields": {
         "image": "",
         "modality": "F\u00fatbol 7",
-        "place_origin": 6,
+        "place_origin": "Polideportivo Sur Parque Estadio",
         "game_day": "Domingo",
-        "players": ["benji"]
+        "players": []
     }
 }]

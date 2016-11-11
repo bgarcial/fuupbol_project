@@ -4,9 +4,12 @@ from rest_framework import serializers
 from userprofiles.serializers import UserSerializer
 
 class FieldSerializer(serializers.HyperlinkedModelSerializer):
+    name = serializers.HyperlinkedIdentityField(view_name='field-detail')
+
     class Meta:
         model = Field
         fields = ('url', 'name','field_type','modality','photo','location')
+
         #depth = 1
 
 class TeamSerializer(serializers.ModelSerializer):
@@ -38,6 +41,7 @@ class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer
 
 
 class MatchSerializer(serializers.ModelSerializer):
+
     #field = serializers.StringRelatedField()
 
     '''
