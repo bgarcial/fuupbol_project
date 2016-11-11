@@ -123,7 +123,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['username']
     objects = UserManager()
 
-    position = models.CharField(max_length=255)
+    position = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+        )
 
     ''' este es
     position = models.CharField(
