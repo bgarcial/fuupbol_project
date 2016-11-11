@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     #'checkboxselectmultiple',
     'rest_framework',
     'storages',
-    'multiselectfield',
+    #'multiselectfield',
     'django_filters',
     'crispy_forms',
     'django_extensions',

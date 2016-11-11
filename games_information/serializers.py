@@ -6,7 +6,7 @@ from userprofiles.serializers import UserSerializer
 class FieldSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Field
-        fields = ('url','id', 'name','field_type','modality','photo','location')
+        fields = ('url', 'name','field_type','modality','photo','location')
         #depth = 1
 
 class TeamSerializer(serializers.ModelSerializer):

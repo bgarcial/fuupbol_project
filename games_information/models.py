@@ -1,6 +1,5 @@
 from django.db import models
 from django.conf import settings
-from multiselectfield import MultiSelectField
 from django.utils import timezone
 
 # Create your models here.
@@ -33,7 +32,13 @@ class Field(models.Model):
     )
 
 
-    name = models.CharField(max_length=150, blank=False)
+    name = models.CharField(
+        max_length=150,
+        blank=False,
+        primary_key=True,
+        #unique=True,
+        )
+
     field_type = models.CharField(
         choices=FIELD_TYPE_CHOICES,
         default=False,
@@ -42,18 +47,11 @@ class Field(models.Model):
         verbose_name=('Tipo de material/grama de la cancha')
     )
 
-    '''
-    modality = MultiSelectField(
-        max_length=255,
-        choices=MODALITY_CHOICES,
-        blank=False,
 
-    )
-    '''
     modality = models.CharField(
-        choices=MODALITY_CHOICES,
+        #choices=MODALITY_CHOICES,
         max_length=40,
-        default=True,
+        #default=True,
         blank=False,
         verbose_name='Modalidad'
     )

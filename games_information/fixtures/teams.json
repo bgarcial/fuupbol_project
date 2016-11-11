@@ -1,0 +1,51 @@
+[{
+    "model": "games_information.team",
+    "pk": "Alav\u00e9s",
+    "fields": {
+        "image": "",
+        "modality": "F\u00fatbol 7",
+        "place_origin": 5,
+        "game_day": "Miercoles",
+        "players": []
+    }
+}, {
+    "model": "games_information.team",
+    "pk": "Aston Huila",
+    "fields": {
+        "image": "fields/Aston_Huila.png",
+        "modality": "F\u00fatbol 7",
+        "place_origin": 2,
+        "game_day": "Jueves",
+        "players": []
+    }
+}, {
+    "model": "games_information.team",
+    "pk": "Manchester United",
+    "fields": {
+        "image": "",
+        "modality": "F\u00fatbol 7",
+        "place_origin": 5,
+        "game_day": "Sabado",
+        "players": ["pogba", "oliver", "benji"]
+    }
+}, {
+    "model": "games_information.team",
+    "pk": "Niupi",
+    "fields": {
+        "image": "",
+        "modality": "F\u00fatbol 11",
+        "place_origin": 6,
+        "game_day": "Domingo",
+        "players": ["oliver"]
+    }
+}, {
+    "model": "games_information.team",
+    "pk": "San Francis",
+    "fields": {
+        "image": "",
+        "modality": "F\u00fatbol 7",
+        "place_origin": 6,
+        "game_day": "Domingo",
+        "players": ["benji"]
+    }
+}]

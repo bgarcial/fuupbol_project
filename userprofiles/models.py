@@ -9,9 +9,6 @@ from .managers import UserManager
 from django import forms
 
 #Django Third packages
-from multiselectfield import MultiSelectField
-
-#from checkboxselectmultiple.widgets import CheckboxSelectMultiple
 
 # Reason for use UserManager
 # http://stackoverflow.com/questions/14723099/attributeerror-manager-object-has-no-attribute-get-by-natural-key-error-in
@@ -42,23 +39,11 @@ class User(AbstractBaseUser, PermissionsMixin):
         ('Segundo Delantero', u'Segundo Delantero'),
     )
 
-
-
-
     SEX_CHOICES = (
         ('Masculino', "Masculino"),
         ('Femenino', "Femenino"),
     )
-    '''
 
-    SEX_CHOICES = [
-     (1, 'Masculino'),
-     (2, 'Femenino'),
-    ]
-
-
-    SEX_CHOICES_AND_EMPTY = [('','All')] + SEX_CHOICES
-    '''
 
     username = models.CharField(
         max_length=15,
@@ -129,27 +114,13 @@ class User(AbstractBaseUser, PermissionsMixin):
         blank=True,
         )
 
-    ''' este es
-    position = models.CharField(
-        choices=POSITION_CHOICES,
-        max_length=334,
-        default=True,
-        blank=True,
-        verbose_name='Posición'
-    )
-
-
+    '''
     position = MultiSelectField(
         max_length=255,
         choices=POSITION_CHOICES,
         blank=False,
         null=True,
 
-    )
-
-    position = forms.MultipleChoiceField(
-        choices=POSITION_CHOICES,
-        widget=CheckboxSelectMultiple
     )
     '''
 
