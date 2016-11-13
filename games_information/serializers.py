@@ -42,12 +42,12 @@ class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer
 
 class MatchSerializer(serializers.ModelSerializer):
 
-    #field = serializers.StringRelatedField()
-    #field=FieldSerializer()
+    #field = serializers.StringRelatedField() name pero no escribible
+    #field=FieldSerializer() url solo
     #field=serializers.HyperlinkedIdentityField(view_name='field-detail')
     field = serializers.SlugRelatedField(queryset=Field.objects.all(),slug_field='name')
-    #home_team = serializers.StringRelatedField()
-    #away_team = serializers.StringRelatedField()
+    # http://stackoverflow.com/questions/28689281/what-is-the-read-write-equivalent-of-serializers-stringrelatedfield
+    # http://www.django-rest-framework.org/api-guide/relations/#slugrelatedfield
 
 
     '''
