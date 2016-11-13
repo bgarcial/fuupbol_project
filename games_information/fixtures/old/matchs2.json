@@ -1,0 +1,132 @@
+[{
+    "model": "games_information.match",
+    "pk": 1,
+    "fields": {
+      "home_team": "San Francis",
+      "away_team": "Niupi",
+      "check_match_away_team": true,
+      "field": 1,
+      "match_date": "2016-10-30T12:33:25Z",
+      "status_challenge": "Pendiente"
+    }
+  },{
+    "model": "games_information.match",
+    "pk": 2,
+    "fields": {
+      "home_team": "San Francis",
+      "away_team": "Manchester United",
+      "check_match_away_team": false,
+      "field": 2,
+      "match_date": "2016-10-30T13:35:04.105Z",
+      "status_challenge": "Aceptado"
+    }
+  },
+  {
+    "model": "games_information.match",
+    "pk": 3,
+    "fields": {
+      "home_team": "Manchester United",
+      "away_team": "Alavés",
+      "check_match_away_team": false,
+      "field": 11,
+      "match_date": "2016-12-31T21:30:00Z",
+      "status_challenge": "Pendiente"
+    }
+  },
+  {
+    "model": "games_information.match",
+    "pk": 4,
+    "fields": {
+      "home_team": "Niupi",
+      "away_team": "Manchester United",
+      "check_match_away_team": false,
+      "field": 7,
+      "match_date": "2016-11-10T15:00:00Z",
+      "status_challenge": "Aceptado"
+    }
+  },
+  {
+    "model": "games_information.match",
+    "pk": 5,
+    "fields": {
+      "home_team": "Alavés",
+      "away_team": "Manchester United",
+      "check_match_away_team": false,
+      "field": 8,
+      "match_date": "2016-11-02T18:00:00Z",
+      "status_challenge": "Aceptado"
+    }
+  },
+  {
+    "model": "games_information.match",
+    "pk": 6,
+    "fields": {
+      "home_team": "Manchester United",
+      "away_team": "Niupi",
+      "check_match_away_team": true,
+      "field": 48,
+      "match_date": "2016-10-13T11:09:00Z",
+      "status_challenge": "Cancelado"
+    }
+  },
+  {
+    "model": "games_information.match",
+    "pk": 7,
+    "fields": {
+      "home_team": "San Francis",
+      "away_team": "Alavés",
+      "check_match_away_team": false,
+      "field": 4,
+      "match_date": "2016-11-01T04:07:42Z",
+      "status_challenge": "Pendiente"
+    }
+  },
+  {
+    "model": "games_information.match",
+    "pk": 8,
+    "fields": {
+      "home_team": "Manchester United",
+      "away_team": "Niupi",
+      "check_match_away_team": false,
+      "field": 5,
+      "match_date": "2016-11-10T15:00:00Z",
+      "status_challenge": "Aceptado"
+    }
+  },
+  {
+    "model": "games_information.match",
+    "pk": 9,
+    "fields": {
+      "home_team": "Manchester United",
+      "away_team": "San Francis",
+      "check_match_away_team": false,
+      "field": 43,
+      "match_date": "2016-11-13T22:46:31Z",
+      "status_challenge": "Pendiente"
+    }
+  },
+  {
+    "model": "games_information.match",
+    "pk": 10,
+    "fields": {
+      "home_team": "Manchester United",
+      "away_team": "San Francis",
+      "check_match_away_team": false,
+      "field": 54,
+      "match_date": "2016-11-06T21:21:19Z",
+      "status_challenge": "Cancelado"
+    }
+  },
+  {
+    "model": "games_information.match",
+    "pk": 11,
+    "fields": {
+      "home_team": "Aston Huila",
+      "away_team": "Niupi",
+      "check_match_away_team": false,
+      "field": 7,
+      "match_date": "2016-11-19T01:00:23Z",
+      "status_challenge": "Cancelado"
+    }
+  }
+]

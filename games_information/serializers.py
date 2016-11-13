@@ -4,7 +4,7 @@ from rest_framework import serializers
 from userprofiles.serializers import UserSerializer
 
 class FieldSerializer(serializers.HyperlinkedModelSerializer):
-    url = serializers.HyperlinkedIdentityField(view_name='field-list',)
+    #url = serializers.HyperlinkedIdentityField(view_name='field-list',)
 
     class Meta:
         model = Field
