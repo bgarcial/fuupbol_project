@@ -34,10 +34,8 @@ class Field(models.Model):
 
     name = models.CharField(
         max_length=150,
-        unique=True,
-        db_index=True,
-        primary_key=True,
-        #unique=True,
+        #primary_key=True,
+        #db_index=True,
         )
 
     field_type = models.CharField(
@@ -47,6 +45,7 @@ class Field(models.Model):
         max_length=20,
         verbose_name=('Tipo de material/grama de la cancha')
     )
+
 
 
     modality = models.CharField(
