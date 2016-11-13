@@ -17,6 +17,7 @@ class TeamSerializer(serializers.ModelSerializer):
 
     #players=UserSerializer(many=True)
     #place_origin = serializers.StringRelatedField()
+    place_origin = serializers.SlugRelatedField(queryset=Field.objects.all(),slug_field='name')
 
     '''
     def setup_eager_loading(queryset):
