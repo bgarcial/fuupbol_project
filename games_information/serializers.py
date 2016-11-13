@@ -4,7 +4,7 @@ from rest_framework import serializers
 from userprofiles.serializers import UserSerializer
 
 class FieldSerializer(serializers.HyperlinkedModelSerializer):
-    name = serializers.HyperlinkedIdentityField(view_name='field-detail')
+    url = serializers.HyperlinkedIdentityField(view_name='field-list',)
 
     class Meta:
         model = Field
@@ -43,6 +43,7 @@ class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer
 class MatchSerializer(serializers.ModelSerializer):
 
     #field = serializers.StringRelatedField()
+    #field=FieldSerializer()
 
     '''
     def setup_eager_loading(queryset):
