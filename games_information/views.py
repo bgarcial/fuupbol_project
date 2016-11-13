@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 from rest_framework import viewsets
-from .serializers import (FieldSerializer, TrainingCompetitionCenterSerializer, TeamSerializer, MatchSerializer)
-from .models import Field, TrainingCompetitionCenter, Team, Match
+from .serializers import (FieldSerializer, TeamSerializer, MatchSerializer)
+from .models import Field, Team, Match
 
 # Create your views here.
 
@@ -22,13 +22,14 @@ class TeamViewSet(viewsets.ModelViewSet):
     serializer_class = TeamSerializer
     filter_fields = ('name','players','game_day','place_origin',)
 
+'''
 class TrainingCompetitionCenterViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
     queryset = TrainingCompetitionCenter.objects.all()
     serializer_class = TrainingCompetitionCenterSerializer
-
+'''
 class MatchViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.

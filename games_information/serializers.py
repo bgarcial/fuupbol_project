@@ -1,5 +1,5 @@
 
-from .models import Field, TrainingCompetitionCenter, Team, Match
+from .models import Field,  Team, Match
 from rest_framework import serializers
 from userprofiles.serializers import UserSerializer
 
@@ -29,7 +29,7 @@ class TeamSerializer(serializers.ModelSerializer):
         model = Team
         fields = ('url','name','image','players','modality','place_origin','game_day',)
         #depth = 1
-
+'''
 class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer):
     fields = FieldSerializer(many=True)
 
@@ -39,7 +39,7 @@ class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer
     class Meta:
         model = TrainingCompetitionCenter
         fields = ('url','id', 'name', 'location','fields','owner',)
-
+'''
 
 class MatchSerializer(serializers.ModelSerializer):
 

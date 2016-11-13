@@ -18,8 +18,7 @@ from django.contrib import admin
 
 from rest_framework import routers
 from userprofiles.views import (UserViewSet,)
-from games_information.views import (FieldViewSet,
-    TrainingCompetitionCenterViewSet, TeamViewSet, MatchViewSet)
+from games_information.views import (FieldViewSet, TeamViewSet, MatchViewSet)
 
 
 from .views import home, home_files

@@ -186,9 +186,10 @@ class Match(models.Model):
         return "{} {} {} {}".format('Cotejo - ', self.home_team, 'vs.', self.away_team)
         #return '%s' % (self.name)
 
-
+'''
 class TrainingCompetitionCenter(models.Model):
     name = models.CharField(max_length=64,blank=True)
     location = models.CharField(max_length=150, blank=False)
     fields = models.ManyToManyField(Field,)
     owner = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+'''
