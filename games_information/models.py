@@ -34,7 +34,7 @@ class Field(models.Model):
 
     name = models.CharField(
         max_length=150,
-        primary_key=True,
+        #primary_key=True,
 
         )
 
