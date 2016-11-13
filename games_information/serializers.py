@@ -42,13 +42,13 @@ class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer
 
 class MatchSerializer(serializers.ModelSerializer):
 
-    #field = serializers.StringRelatedField()
+    field = serializers.StringRelatedField()
     #field=FieldSerializer()
 
-    '''
+
     def setup_eager_loading(queryset):
-        queryset = queryset.select_related('field',)
-    '''
+        queryset = queryset.prefetch_related('field',)
+
 
     class Meta:
         model = Match
