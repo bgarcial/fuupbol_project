@@ -40,20 +40,20 @@ class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer
         fields = ('url','id', 'name', 'location','fields','owner',)
 
 
-class MatchSerializer(serializers.HyperlinkedModelSerializer):
+class MatchSerializer(serializers.ModelSerializer):
 
     #field = serializers.StringRelatedField()
     #field=FieldSerializer()
     #field=serializers.HyperlinkedIdentityField(view_name='field-detail')
-    field = serializers.StringRelatedField()
-    home_team = serializers.StringRelatedField()
-    away_team = serializers.StringRelatedField()
+    #field = serializers.StringRelatedField()
+    #home_team = serializers.StringRelatedField()
+    #away_team = serializers.StringRelatedField()
 
 
-
+    '''
     def setup_eager_loading(queryset):
         queryset = queryset.select_related('field','home_team','away_team',)
-
+    '''
 
     class Meta:
         model = Match
