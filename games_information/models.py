@@ -34,8 +34,9 @@ class Field(models.Model):
 
     name = models.CharField(
         max_length=150,
+        unique=True,
         #primary_key=True,
-        #db_index=True,
+
         )
 
     field_type = models.CharField(

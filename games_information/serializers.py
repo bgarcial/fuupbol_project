@@ -8,7 +8,7 @@ class FieldSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Field
-        fields = ('url', 'name','field_type','modality','photo','location')
+        fields = ('url', 'id','name','field_type','modality','photo','location')
 
         #depth = 1
 
@@ -42,12 +42,26 @@ class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer
 
 class MatchSerializer(serializers.ModelSerializer):
 
-    field = serializers.StringRelatedField()
+
+    #field = serializers.StringRelatedField()
     #field=FieldSerializer()
 
+    #field = serializers.StringRelatedField() name pero no escribible
+    #field=FieldSerializer() url solo
+    #field=serializers.HyperlinkedIdentityField(view_name='field-detail')
+    field = serializers.SlugRelatedField(queryset=Field.objects.all(),slug_field='name')
+    # http://stackoverflow.com/questions/28689281/what-is-the-read-write-equivalent-of-serializers-stringrelatedfield
+    # http://www.django-rest-framework.org/api-guide/relations/#slugrelatedfield
 
+
+    '''
     def setup_eager_loading(queryset):
+
         queryset = queryset.prefetch_related('field',)
+
+
+        queryset = queryset.select_related('field','home_team','away_team',)
+    '''
 
 
     class Meta:
