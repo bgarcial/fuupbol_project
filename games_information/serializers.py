@@ -8,7 +8,7 @@ class FieldSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Field
-        fields = ('url', 'name','field_type','modality','photo','location')
+        fields = ('url', 'id','name','field_type','modality','photo','location')
 
         #depth = 1
 
@@ -45,7 +45,7 @@ class MatchSerializer(serializers.ModelSerializer):
     #field = serializers.StringRelatedField()
     #field=FieldSerializer()
     #field=serializers.HyperlinkedIdentityField(view_name='field-detail')
-    #field = serializers.StringRelatedField()
+    field = serializers.SlugRelatedField(queryset=Field.objects.all(),slug_field='name')
     #home_team = serializers.StringRelatedField()
     #away_team = serializers.StringRelatedField()
 
