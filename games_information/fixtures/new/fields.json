@@ -4,7 +4,7 @@
     "fields": {
         "name": "Stanford Bridge",
         "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Londres"
     }
@@ -14,7 +14,7 @@
     "fields": {
         "name": "Atanasio Girardot",
         "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Medell\u00edn, Sector Unidad Deportiva"
     }
@@ -24,7 +24,7 @@
     "fields": {
         "name": "Se\u00f1or Gol",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn, Avenida las Vegas"
     }
@@ -34,7 +34,7 @@
     "fields": {
         "name": "Chalacas Gol",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn, Belen Rosales."
     }
@@ -44,7 +44,7 @@
     "fields": {
         "name": "La Bombonera",
         "field_type": "Grama natural",
-        "modality": "F\u00fatbol 5",
+        "modality": "['F\u00fatbol 5']",
         "photo": "",
         "location": "Sabaneta."
     }
@@ -54,7 +54,7 @@
     "fields": {
         "name": "La Jaula del Angel",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn, C.C El Tesoro"
     }
@@ -64,7 +64,7 @@
     "fields": {
         "name": "Manuel Murillo Toro",
         "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Ibague"
     }
@@ -74,7 +74,7 @@
     "fields": {
         "name": "Polideportivo Sur Parque Estadio",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Envigados"
     }
@@ -84,7 +84,7 @@
     "fields": {
         "name": "El Templo Del F\u00fatbol",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6', 'F\u00fatbol 5']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -94,7 +94,7 @@
     "fields": {
         "name": "Joga Bonito",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn (Cl 56 53-22)"
     }
@@ -104,7 +104,7 @@
     "fields": {
         "name": "Autogol",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn (Cl 50 65-103)"
     }
@@ -114,7 +114,7 @@
     "fields": {
         "name": "Aristigol",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Sabaneta (Cr 48 61 S-230)"
     }
@@ -124,7 +124,7 @@
     "fields": {
         "name": "La Estaci\u00f3n Del Futbol",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Bello (Av 38 48-21)"
     }
@@ -134,7 +134,7 @@
     "fields": {
         "name": "Sport Roof",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn, Plemium Plaza (Cra 43A cll 30)"
     }
@@ -144,7 +144,7 @@
     "fields": {
         "name": "Envigol",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Envigado (Cr 46 C 46 S-65)"
     }
@@ -154,7 +154,7 @@
     "fields": {
         "name": "Canchas Wembley'5",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn (Cr 70 Circular 3)"
     }
@@ -162,109 +162,99 @@
     "model": "games_information.field",
     "pk": 17,
     "fields": {
-        "name": "Chalacas Gol",
+        "name": "Old Trafford",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
-        "location": "Medell\u00edn (Cl 30 A 69 -70)"
-    }
-}, {
-    "model": "games_information.field",
-    "pk": 17,
-    "fields": {
-        "name": "Elite del F\u00fatbol",
-        "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
-        "photo": "",
-        "location": "Medell\u00edn (Cr 56 B 49 A-29 P-19)"
+        "location": "Sabaneta"
     }
 }, {
     "model": "games_information.field",
     "pk": 18,
     "fields": {
-        "name": "Los Estadios",
+        "name": "Elite del F\u00fatbol",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
-        "location": "Medell\u00edn (Carrera 55  60-35)"
+        "location": "Medell\u00edn (Cr 56 B 49 A-29 P-19)"
     }
 }, {
     "model": "games_information.field",
     "pk": 19,
     "fields": {
-        "name": "Soccer 70",
+        "name": "Los Estadios",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
-        "location": "Medell\u00edn (Carrera 70 San Juan)"
+        "location": "Medell\u00edn (Carrera 55  60-35)"
     }
 }, {
     "model": "games_information.field",
     "pk": 20,
     "fields": {
-        "name": "Canchas barrio Obrero - Comfama",
+        "name": "Soccer 70",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
-        "location": "Bello"
+        "location": "Medell\u00edn (Carrera 70 San Juan)"
     }
 }, {
     "model": "games_information.field",
     "pk": 21,
     "fields": {
-        "name": "Liverpool",
+        "name": "Canchas barrio Obrero - Comfama",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
-        "location": "Medell\u00edn (Calle 49 44-17)"
+        "location": "Bello"
     }
 }, {
     "model": "games_information.field",
     "pk": 22,
     "fields": {
-        "name": "Wellness Fit La Mayorista",
+        "name": "Liverpool",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
-        "location": "Medell\u00edn"
+        "location": "Medell\u00edn (Calle 49 44-17)"
     }
 }, {
     "model": "games_information.field",
     "pk": 23,
     "fields": {
-        "name": "El Golazo F\u00fatbol",
+        "name": "Wellness Fit La Mayorista",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
-        "photo": "",
-        "location": "Medell\u00edn (Cl 50 67-104)"
-    }
-}, {
-    "model": "games_information.field",
-    "pk": 24,
-    "fields": {
-        "name": "Soccerfit",
-        "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
-        "photo": "",
-        "location": "Medell\u00edn (Calle 43 74-69 Laureles)"
-    }
-}, {
-    "model": "games_information.field",
-    "pk": 25,
-    "fields": {
-        "name": "Country Club",
-        "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn"
     }
 }, {
     "model": "games_information.field",
+    "pk": 24,
+    "fields": {
+        "name": "El Golazo F\u00fatbol",
+        "field_type": "Grama sintetica",
+        "modality": "['F\u00fatbol 6']",
+        "photo": "",
+        "location": "Medell\u00edn (Cl 50 67-104)"
+    }
+}, {
+    "model": "games_information.field",
+    "pk": 25,
+    "fields": {
+        "name": "Soccerfit",
+        "field_type": "Grama sintetica",
+        "modality": "['F\u00fatbol 6']",
+        "photo": "",
+        "location": "Medell\u00edn (Calle 43 74-69 Laureles)"
+    }
+}, {
+    "model": "games_information.field",
     "pk": 26,
     "fields": {
-        "name": "Colegio San Ignacio",
+        "name": "Country Club",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -272,9 +262,9 @@
     "model": "games_information.field",
     "pk": 27,
     "fields": {
-        "name": "Universidad de Antioquia",
-        "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
+        "name": "Colegio San Ignacio",
+        "field_type": "Grama sintetica",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -282,9 +272,9 @@
     "model": "games_information.field",
     "pk": 28,
     "fields": {
-        "name": "Universidad Nacional de Colombia",
+        "name": "Universidad de Antioquia",
         "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -292,9 +282,9 @@
     "model": "games_information.field",
     "pk": 29,
     "fields": {
-        "name": "Polit\u00e9cnico Colombiano Jaime Isaza Cadavid",
+        "name": "Universidad Nacional de Colombia",
         "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -302,9 +292,9 @@
     "model": "games_information.field",
     "pk": 30,
     "fields": {
-        "name": "Instituto Tecnol\u00f3gico Metropolitano (ITM)",
-        "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "name": "Polit\u00e9cnico Colombiano Jaime Isaza Cadavid",
+        "field_type": "Grama natural",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -312,9 +302,9 @@
     "model": "games_information.field",
     "pk": 31,
     "fields": {
-        "name": "Instituci\u00f3n Universitaria de Envigado",
-        "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
+        "name": "Instituto Tecnol\u00f3gico Metropolitano (ITM)",
+        "field_type": "Grama sintetica",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -322,9 +312,9 @@
     "model": "games_information.field",
     "pk": 32,
     "fields": {
-        "name": "Tecnol\u00f3gico de Antioqu\u00eda",
-        "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "name": "Instituci\u00f3n Universitaria de Envigado",
+        "field_type": "Grama natural",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -332,29 +322,29 @@
     "model": "games_information.field",
     "pk": 33,
     "fields": {
-        "name": "Universidad de San Buenaventura (Bello)",
-        "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
-        "photo": "",
-        "location": "Bello"
-    }
-}, {
-    "model": "games_information.field",
-    "pk": 34,
-    "fields": {
-        "name": "Universidad Pontificia Bolivariana (UPB)",
+        "name": "Tecnol\u00f3gico de Antioqu\u00eda",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 8",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn"
     }
 }, {
     "model": "games_information.field",
+    "pk": 34,
+    "fields": {
+        "name": "Universidad de San Buenaventura (Bello)",
+        "field_type": "Grama natural",
+        "modality": "['F\u00fatbol 11']",
+        "photo": "",
+        "location": "Bello"
+    }
+}, {
+    "model": "games_information.field",
     "pk": 35,
     "fields": {
-        "name": "Universidad de Medell\u00edn (UDEM)",
-        "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
+        "name": "Universidad Pontificia Bolivariana (UPB)",
+        "field_type": "Grama sintetica",
+        "modality": "['F\u00fatbol 8']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -362,9 +352,9 @@
     "model": "games_information.field",
     "pk": 36,
     "fields": {
-        "name": "Universidad CES",
+        "name": "Universidad de Medell\u00edn (UDEM)",
         "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -372,9 +362,9 @@
     "model": "games_information.field",
     "pk": 37,
     "fields": {
-        "name": "Universidad EAFIT",
-        "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 8",
+        "name": "Universidad CES",
+        "field_type": "Grama natural",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -382,59 +372,59 @@
     "model": "games_information.field",
     "pk": 38,
     "fields": {
-        "name": "Corporaci\u00f3n Universitaria Lasallista",
-        "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
+        "name": "Universidad EAFIT",
+        "field_type": "Grama sintetica",
+        "modality": "['F\u00fatbol 8']",
         "photo": "",
-        "location": "Caldas"
+        "location": "Medell\u00edn"
     }
 }, {
     "model": "games_information.field",
     "pk": 39,
     "fields": {
-        "name": "Corporaci\u00f3n Universitaria de Sabaneta J. E. Valderrama",
+        "name": "Corporaci\u00f3n Universitaria Lasallista",
         "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
-        "location": "Sabaneta"
+        "location": "Caldas"
     }
 }, {
     "model": "games_information.field",
     "pk": 40,
     "fields": {
-        "name": "Corporaci\u00f3n Universitaria Adventista (UNAC)",
+        "name": "Corporaci\u00f3n Universitaria de Sabaneta J. E. Valderrama",
         "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
-        "location": "Medell\u00edn"
+        "location": "Sabaneta"
     }
 }, {
     "model": "games_information.field",
     "pk": 41,
     "fields": {
-        "name": "Escuela de Ingenier\u00eda de Antioqu\u00eda (EIA)",
+        "name": "Corporaci\u00f3n Universitaria Adventista (UNAC)",
         "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
-        "photo": "",
-        "location": "Envigado"
-    }
-}, {
-    "model": "games_information.field",
-    "pk": 42,
-    "fields": {
-        "name": "Instituci\u00f3n Universitaria Esumer",
-        "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Medell\u00edn"
     }
 }, {
     "model": "games_information.field",
+    "pk": 42,
+    "fields": {
+        "name": "Escuela de Ingenier\u00eda de Antioqu\u00eda (EIA)",
+        "field_type": "Grama natural",
+        "modality": "['F\u00fatbol 11']",
+        "photo": "",
+        "location": "Envigado"
+    }
+}, {
+    "model": "games_information.field",
     "pk": 43,
     "fields": {
-        "name": "Instituto Tecnol\u00f3gico Pascual Bravo",
-        "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
+        "name": "Instituci\u00f3n Universitaria Esumer",
+        "field_type": "Grama sintetica",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -442,29 +432,29 @@
     "model": "games_information.field",
     "pk": 44,
     "fields": {
-        "name": "Instituci\u00f3n Universitaria Ceipa",
+        "name": "Instituto Tecnol\u00f3gico Pascual Bravo",
         "field_type": "Grama natural",
-        "modality": "F\u00fatbol 11",
-        "photo": "",
-        "location": "Sabaneta"
-    }
-}, {
-    "model": "games_information.field",
-    "pk": 45,
-    "fields": {
-        "name": "Instituci\u00f3n Universitaria Salazar y Herrera",
-        "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Medell\u00edn"
     }
 }, {
     "model": "games_information.field",
+    "pk": 45,
+    "fields": {
+        "name": "Instituci\u00f3n Universitaria Ceipa",
+        "field_type": "Grama natural",
+        "modality": "['F\u00fatbol 11']",
+        "photo": "",
+        "location": "Sabaneta"
+    }
+}, {
+    "model": "games_information.field",
     "pk": 46,
     "fields": {
-        "name": "Unidad Deportiva de Bel\u00e9n Andr\u00e9s Escobar Saldarriaga",
+        "name": "Instituci\u00f3n Universitaria Salazar y Herrera",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 8",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -472,9 +462,9 @@
     "model": "games_information.field",
     "pk": 47,
     "fields": {
-        "name": "Unidad Deportiva de Castilla Jos\u00e9 Ren\u00e9 Higuita",
+        "name": "Unidad Deportiva de Bel\u00e9n Andr\u00e9s Escobar Saldarriaga",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 11",
+        "modality": "['F\u00fatbol 8']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -482,9 +472,9 @@
     "model": "games_information.field",
     "pk": 48,
     "fields": {
-        "name": "Parque Juanes de la Paz",
+        "name": "Unidad Deportiva de Castilla Jos\u00e9 Ren\u00e9 Higuita",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -492,9 +482,9 @@
     "model": "games_information.field",
     "pk": 49,
     "fields": {
-        "name": "Unidad Deportiva Mar\u00eda Luisa Calle",
+        "name": "Parque Juanes de la Paz",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -502,9 +492,9 @@
     "model": "games_information.field",
     "pk": 50,
     "fields": {
-        "name": "Unidad Deportiva La Floresta",
+        "name": "Unidad Deportiva Mar\u00eda Luisa Calle",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 11",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -512,9 +502,9 @@
     "model": "games_information.field",
     "pk": 51,
     "fields": {
-        "name": "Cancha La Maracan\u00e1",
+        "name": "Unidad Deportiva La Floresta",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 11",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -522,9 +512,9 @@
     "model": "games_information.field",
     "pk": 52,
     "fields": {
-        "name": "Cancha Campo Amor",
+        "name": "Cancha La Maracan\u00e1",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 11",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -532,9 +522,9 @@
     "model": "games_information.field",
     "pk": 53,
     "fields": {
-        "name": "Cancha Santa Luc\u00eda (cancha Amarilla El Danubio)",
+        "name": "Cancha Campo Amor",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 11",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -542,9 +532,9 @@
     "model": "games_information.field",
     "pk": 54,
     "fields": {
-        "name": "Cancha sint\u00e9tica El Raizal",
+        "name": "Cancha Santa Luc\u00eda (cancha Amarilla El Danubio)",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 11",
+        "modality": "['F\u00fatbol 11']",
         "photo": "",
         "location": "Medell\u00edn"
     }
@@ -552,9 +542,19 @@
     "model": "games_information.field",
     "pk": 55,
     "fields": {
+        "name": "Cancha sint\u00e9tica El Raizal",
+        "field_type": "Grama sintetica",
+        "modality": "['F\u00fatbol 11']",
+        "photo": "",
+        "location": "Medell\u00edn"
+    }
+}, {
+    "model": "games_information.field",
+    "pk": 56,
+    "fields": {
         "name": "Cancha sint\u00e9tica Parques del R\u00edo",
         "field_type": "Grama sintetica",
-        "modality": "F\u00fatbol 6",
+        "modality": "['F\u00fatbol 6']",
         "photo": "",
         "location": "Medell\u00edn"
     }
