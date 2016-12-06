@@ -135,6 +135,7 @@ class Match(models.Model):
     ACCEPTED_CHALLENGE = 'Aceptado'
     PENDING_CHALLENGE = 'Pendiente'
     CANCELLED_CHALLENGE = 'Cancelado'
+    FICHAJE = 'Fichaje'
 
 
     STATUS_CHALLENGE_CHOICES = (
@@ -142,6 +143,7 @@ class Match(models.Model):
         (ACCEPTED_CHALLENGE, u'Aceptado'),
         (PENDING_CHALLENGE, u'Pendiente'),
         (CANCELLED_CHALLENGE, u'Cancelado'),
+        (FICHAJE, u'Fichaje'),
     )
 
 
@@ -181,6 +183,10 @@ class Match(models.Model):
         blank=False,
         verbose_name='Estado del desafío'
     )
+    home_team_players_acept = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='home_team_players_acept', blank=True,)
+    away_team_players_acept = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='away_team_players_acept', blank=True,)
+    home_team_players_cancel = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='home_team_players_cancel', blank=True,)
+    away_team_players_cancel = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='away_team_players_cancel', blank=True,)
 
     def __str__(self):
         return "{} {} {} {}".format('Cotejo - ', self.home_team, 'vs.', self.away_team)
