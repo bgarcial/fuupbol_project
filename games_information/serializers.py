@@ -69,5 +69,5 @@ class MatchSerializer(serializers.ModelSerializer):
         model = Match
         fields = ('url','id','home_team', 'away_team','field','match_date',
             'check_match_away_team','status_challenge','home_team_players_acept',
-            'away_team_players_acept','home_team_players_cancel','away_team_players_cancel',)
+            'away_team_players_acept','home_team_players_cancel','away_team_players_cancel','fichaje_players_match',)
         #depth=1
