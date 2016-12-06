@@ -187,6 +187,7 @@ class Match(models.Model):
     away_team_players_acept = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='away_team_players_acept', blank=True,)
     home_team_players_cancel = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='home_team_players_cancel', blank=True,)
     away_team_players_cancel = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='away_team_players_cancel', blank=True,)
+    fichaje_players_match = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='fichaje_players_match', blank=True,)
 
     def __str__(self):
         return "{} {} {} {}".format('Cotejo - ', self.home_team, 'vs.', self.away_team)
