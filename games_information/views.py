@@ -36,4 +36,4 @@ class MatchViewSet(viewsets.ModelViewSet):
     """
     queryset = Match.objects.all()
     serializer_class = MatchSerializer
-    filter_fields = ('home_team','away_team', 'status_challenge',)
+    filter_fields = ('home_team','away_team', 'status_challenge','fichaje_players_match',)
