@@ -27,8 +27,10 @@ class TeamSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Team
-        fields = ('url','name','image','players','modality','place_origin','game_day',)
-        #depth = 1
+        fields = ('url', 'name', 'image', 'players', 'modality', 'branch',
+            'category', 'enterprise_name', 'town_name', 'university_name',
+            'school_name', 'place_origin', 'game_day',)
+        # depth = 1
 '''
 class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer):
     fields = FieldSerializer(many=True)
@@ -40,8 +42,9 @@ class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer
         model = TrainingCompetitionCenter
         fields = ('url','id', 'name', 'location','fields','owner',)
 '''
-class MatchSerializer(serializers.ModelSerializer):
 
+
+class MatchSerializer(serializers.ModelSerializer):
 
     # field = serializers.StringRelatedField()
     # field=FieldSerializer()

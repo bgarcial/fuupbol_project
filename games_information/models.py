@@ -79,6 +79,27 @@ class Team(models.Model):
         (MODALITY_5, u'Fútbol 5'),
     )
 
+    CATEGORY_ENTERPRISE = 'Empresa'
+    CATEGORY_TOWN = 'Barrio'
+    CATEGORY_UNIVERSITY = 'Universidad'
+    CATEGORY_SCHOOL = 'Colegio'
+    CATEGORY_CHILDREN = 'Infantil'
+    CATEGORY_MASTER = 'Master'
+
+    CATEGORY_CHOICES = (
+
+        (CATEGORY_ENTERPRISE, u'Empresa'),
+        (CATEGORY_TOWN, u'Barrio'),
+        (CATEGORY_UNIVERSITY, u'Universidad'),
+        (CATEGORY_SCHOOL, u'Colegio'),
+        (CATEGORY_CHILDREN, u'Infantil'),
+        (CATEGORY_MASTER, u'Master'),
+    )
+
+    BRANCH_CHOICES = (
+        ('Masculino', "Masculino"),
+        ('Femenino', "Femenino"),
+    )
 
 
     # user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -88,9 +109,18 @@ class Team(models.Model):
                             unique=True,
                             db_index=True,)
 
-    image = models.ImageField(upload_to='fields',blank=True, null=True, verbose_name='Imagen de la plantilla o escudo')
+    image = models.ImageField(
+        upload_to='fields',
+        blank=True,
+        null=True,
+        verbose_name='Imagen de la plantilla o escudo'
+    )
 
-    players = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='players', blank=True,)
+    players = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name='players',
+        blank=True,
+    )
 
     '''
     modality = MultiSelectField(
@@ -109,8 +139,52 @@ class Team(models.Model):
         verbose_name='Modalidad'
     )
 
+    branch = models.CharField(
+        choices = BRANCH_CHOICES,
+        max_length=12,
+        default=False,
+        blank=True,
+        verbose_name='Rama'
+    )
+
     # listohome_field = models.ManyToManyField(Field)
     # place_origin = models.CharField(max_length=150, blank=True, verbose_name='Lugar de origen')
+
+    category = models.CharField(
+        choices=CATEGORY_CHOICES,
+        max_length=40,
+        default=True,
+        blank=False,
+        verbose_name='Categoría'
+    )
+
+    enterprise_name = models.CharField(
+        max_length=150,
+        blank=True,
+        null=True,
+        verbose_name='Nombre de la empresa'
+    )
+
+    town_name = models.CharField(
+        max_length=150,
+        blank=True,
+        null=True,
+        verbose_name='Nombre del barrio'
+    )
+
+    university_name = models.CharField(
+        max_length=150,
+        blank=True,
+        null=True,
+        verbose_name='Nombre de la Universidad'
+    )
+
+    school_name = models.CharField(
+        max_length=150,
+        blank=True,
+        null=True,
+        verbose_name='Nombre del colegio'
+    )
 
     place_origin = models.ForeignKey(
         'games_information.Field',
@@ -118,8 +192,11 @@ class Team(models.Model):
 
     )
     # players = Hacer un query de los jugadores
-    game_day = models.CharField(max_length=150, blank=False, verbose_name='Reservas o frecuencia de juego')
-
+    game_day = models.CharField(
+        max_length=150,
+        blank=False,
+        verbose_name='Reservas o frecuencia de juego'
+    )
 
     def __str__(self):
         return '%s' % (self.name)
@@ -132,7 +209,6 @@ class Match(models.Model):
     CANCELLED_CHALLENGE = 'Cancelado'
     FICHAJE = 'Fichaje'
 
-
     STATUS_CHALLENGE_CHOICES = (
 
         (ACCEPTED_CHALLENGE, u'Aceptado'),
@@ -140,7 +216,6 @@ class Match(models.Model):
         (CANCELLED_CHALLENGE, u'Cancelado'),
         (FICHAJE, u'Fichaje'),
     )
-
 
     home_team = models.ForeignKey(
         'games_information.Team',
