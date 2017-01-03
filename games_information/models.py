@@ -63,20 +63,13 @@ class Field(models.Model):
 
 class Team(models.Model):
 
-    MODALITY_11 = 'Fútbol 11'
     MODALITY_8 = 'Fútbol 8'
-    MODALITY_7 = 'Fútbol 7'
     MODALITY_6 = 'Fútbol 6'
-    MODALITY_5 = 'Fútbol 5'
-    # FUTSAL_MODALITY = 'Fútbol de salón'
 
     MODALITY_CHOICES = (
 
-        (MODALITY_11, u'Fútbol 11'),
         (MODALITY_8, u'Fútbol 8'),
-        (MODALITY_7, u'Fútbol 7'),
         (MODALITY_6, u'Fútbol 6'),
-        (MODALITY_5, u'Fútbol 5'),
     )
 
     CATEGORY_ENTERPRISE = 'Empresa'
