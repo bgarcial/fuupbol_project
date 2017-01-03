@@ -40,16 +40,15 @@ class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer
         model = TrainingCompetitionCenter
         fields = ('url','id', 'name', 'location','fields','owner',)
 '''
-
 class MatchSerializer(serializers.ModelSerializer):
 
 
-    #field = serializers.StringRelatedField()
-    #field=FieldSerializer()
+    # field = serializers.StringRelatedField()
+    # field=FieldSerializer()
 
-    #field = serializers.StringRelatedField() name pero no escribible
-    #field=FieldSerializer() url solo
-    #field=serializers.HyperlinkedIdentityField(view_name='field-detail')
+    # field = serializers.StringRelatedField() name pero no escribible
+    # field=FieldSerializer() url solo
+    # field=serializers.HyperlinkedIdentityField(view_name='field-detail')
     field = serializers.SlugRelatedField(queryset=Field.objects.all(),slug_field='name')
     # http://stackoverflow.com/questions/28689281/what-is-the-read-write-equivalent-of-serializers-stringrelatedfield
     # http://www.django-rest-framework.org/api-guide/relations/#slugrelatedfield
@@ -63,11 +62,8 @@ class MatchSerializer(serializers.ModelSerializer):
 
         queryset = queryset.select_related('field','home_team','away_team',)
     '''
-
-
     class Meta:
         model = Match
-        fields = ('url','id','home_team', 'away_team','field','match_date',
-            'check_match_away_team','status_challenge','home_team_players_acept',
-            'away_team_players_acept','home_team_players_cancel','away_team_players_cancel','fichaje_players_match',)
+        fields = ('url', 'id', 'home_team', 'away_team','field','match_date',
+            'check_match_away_team', 'status_challenge', 'home_team_players_accept', 'away_team_players_accept', 'home_team_players_cancel', 'away_team_players_cancel', 'fichaje_players_match',)
         #depth=1

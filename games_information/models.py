@@ -178,14 +178,14 @@ class Match(models.Model):
         verbose_name='Estado del desafío'
     )
 
-    home_team_players_acept = models.ManyToManyField(
+    home_team_players_accept = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
-        related_name='home_team_players_acept',
+        related_name='home_team_players_accept',
         blank=True,)
 
-    away_team_players_acept = models.ManyToManyField(
+    away_team_players_accept = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
-        related_name='away_team_players_acept',
+        related_name='away_team_players_accept',
         blank=True,)
 
     home_team_players_cancel = models.ManyToManyField(
