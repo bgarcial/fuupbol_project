@@ -1,4 +1,6 @@
 -r base.txt
 django-extensions
+flake8==3.2.1
+
 
 

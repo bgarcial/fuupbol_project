@@ -14,8 +14,6 @@ class Field(models.Model):
         (FIELD_TYPE_ARTIFICIAL, u'Grama sintetica'),
     )
 
-
-
     MODALITY_11 = 'Fútbol 11'
     MODALITY_8 = 'Fútbol 8'
     MODALITY_7 = 'Fútbol 7'
@@ -31,11 +29,10 @@ class Field(models.Model):
         (MODALITY_5, u'Fútbol 5'),
     )
 
-
     name = models.CharField(
         max_length=150,
         unique=True,
-        #primary_key=True,
+        # primary_key=True,
 
         )
 
@@ -47,34 +44,31 @@ class Field(models.Model):
         verbose_name=('Tipo de material/grama de la cancha')
     )
 
-
-
     modality = models.CharField(
-        #choices=MODALITY_CHOICES,
+        # choices=MODALITY_CHOICES,
         max_length=40,
-        #default=True,
+        # default=True,
         blank=False,
         verbose_name='Modalidad'
     )
+
     photo = models.ImageField(upload_to='fields', blank=True, null=True)
+
     location = models.CharField(max_length=150, blank=False)
-
-
 
     def __str__(self):
         return '%s %s %s' % (self.name, self.field_type, self.location)
         #return '%s' % (self.name,)
 
+
 class Team(models.Model):
-
-
 
     MODALITY_11 = 'Fútbol 11'
     MODALITY_8 = 'Fútbol 8'
     MODALITY_7 = 'Fútbol 7'
     MODALITY_6 = 'Fútbol 6'
     MODALITY_5 = 'Fútbol 5'
-    #FUTSAL_MODALITY = 'Fútbol de salón'
+    # FUTSAL_MODALITY = 'Fútbol de salón'
 
     MODALITY_CHOICES = (
 
@@ -87,12 +81,13 @@ class Team(models.Model):
 
 
 
-    #user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    # user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     name = models.CharField(max_length=64,
                             blank=True,
                             primary_key=True,
                             unique=True,
                             db_index=True,)
+
     image = models.ImageField(upload_to='fields',blank=True, null=True, verbose_name='Imagen de la plantilla o escudo')
 
     players = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='players', blank=True,)
@@ -114,15 +109,15 @@ class Team(models.Model):
         verbose_name='Modalidad'
     )
 
-    #listohome_field = models.ManyToManyField(Field)
-    #place_origin = models.CharField(max_length=150, blank=True, verbose_name='Lugar de origen')
+    # listohome_field = models.ManyToManyField(Field)
+    # place_origin = models.CharField(max_length=150, blank=True, verbose_name='Lugar de origen')
 
     place_origin = models.ForeignKey(
         'games_information.Field',
         verbose_name='Lugar de origen',
 
     )
-    #players = Hacer un query de los jugadores
+    # players = Hacer un query de los jugadores
     game_day = models.CharField(max_length=150, blank=False, verbose_name='Reservas o frecuencia de juego')
 
 
@@ -165,7 +160,6 @@ class Match(models.Model):
 
     check_match_away_team = models.BooleanField(default=False)
 
-
     field = models.ForeignKey(
         'games_information.Field',
         null=False,
@@ -183,20 +177,34 @@ class Match(models.Model):
         blank=False,
         verbose_name='Estado del desafío'
     )
-    home_team_players_acept = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='home_team_players_acept', blank=True,)
-    away_team_players_acept = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='away_team_players_acept', blank=True,)
-    home_team_players_cancel = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='home_team_players_cancel', blank=True,)
-    away_team_players_cancel = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='away_team_players_cancel', blank=True,)
-    fichaje_players_match = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='fichaje_players_match', blank=True,)
+
+    home_team_players_acept = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name='home_team_players_acept',
+        blank=True,)
+
+    away_team_players_acept = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name='away_team_players_acept',
+        blank=True,)
+
+    home_team_players_cancel = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name='home_team_players_cancel',
+        blank=True,)
+
+    away_team_players_cancel = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name='away_team_players_cancel',
+        blank=True,)
+
+    fichaje_players_match = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name='fichaje_players_match',
+        blank=True,)
 
     def __str__(self):
         return "{} {} {} {}".format('Cotejo - ', self.home_team, 'vs.', self.away_team)
-        #return '%s' % (self.name)
+        # return '%s' % (self.name)
 
-'''
-class TrainingCompetitionCenter(models.Model):
-    name = models.CharField(max_length=64,blank=True)
-    location = models.CharField(max_length=150, blank=False)
-    fields = models.ManyToManyField(Field,)
-    owner = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-'''
+

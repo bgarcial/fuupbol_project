@@ -6,6 +6,7 @@ from .models import Field, Team, Match
 
 # Create your views here.
 
+
 class FieldViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
@@ -22,6 +23,7 @@ class TeamViewSet(viewsets.ModelViewSet):
     serializer_class = TeamSerializer
     filter_fields = ('name','players','game_day','place_origin',)
 
+
 '''
 class TrainingCompetitionCenterViewSet(viewsets.ModelViewSet):
     """
@@ -30,10 +32,12 @@ class TrainingCompetitionCenterViewSet(viewsets.ModelViewSet):
     queryset = TrainingCompetitionCenter.objects.all()
     serializer_class = TrainingCompetitionCenterSerializer
 '''
+
+
 class MatchViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
     queryset = Match.objects.all()
     serializer_class = MatchSerializer
-    filter_fields = ('home_team','away_team', 'status_challenge','fichaje_players_match',)
+    filter_fields = ('home_team','away_team', 'status_challenge', 'fichaje_players_match', )

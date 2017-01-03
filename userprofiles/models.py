@@ -18,10 +18,11 @@ from django import forms
 # https://docs.djangoproject.com/en/dev/ref/contrib/auth/#manager-methods
 
 # Create your models here.
+
+
 class User(AbstractBaseUser, PermissionsMixin):
     # Using PermissionsMixin
     # http://stackoverflow.com/questions/31370333/custom-django-user-object-has-no-attribute-has-module-perms
-
 
     POSITION_CHOICES = (
         ('Portero', u'Portero'),
@@ -44,7 +45,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         ('Femenino', "Femenino"),
     )
 
-
     username = models.CharField(
         max_length=15,
         unique=True,
@@ -53,7 +53,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
     # http://stackoverflow.com/questions/25239164/issue-with-createsuperuser-when-implementing-custom-user-model     required ...
 
-    first_name=models.CharField(max_length=50, blank=False,)
+    first_name = models.CharField(max_length=50, blank=False,)
 
     last_name=models.CharField(max_length=50, blank=False,)
 
@@ -70,8 +70,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
 
     is_player = models.BooleanField(default=False)
-
-
 
     team = models.ForeignKey(
         'games_information.Team',
@@ -92,7 +90,6 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(max_length=254, unique=True)
 
-
     is_staff = models.BooleanField(
         default=True,
         help_text='Designates whether the user can log into this admin site.')
@@ -100,9 +97,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
 
-
-    #is_coach = models.BooleanField(default=False)
-    #is_viewer = models.BooleanField(default=False)
+    # is_coach = models.BooleanField(default=False)
+    # is_viewer = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
@@ -147,7 +143,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     class Meta:
         db_table = 'auth_user'
 
-
     def get_full_name(self):
         """
         Returns the first_name plus the last_name, with a space in between.
@@ -159,10 +154,10 @@ class User(AbstractBaseUser, PermissionsMixin):
         "Returns the short name for the user."
         return self.first_name
 
-
     def __str__(self):
 
-        player_full_name = '%s %s %s' % (self.nickname,self.first_name, self.last_name)
+        player_full_name = '%s %s %s' % (self.nickname, self.first_name,
+            self.last_name)
         return player_full_name.strip()
         #return "{},{},{}".format(self.nickname, self.first_name, self.last_name )
 
