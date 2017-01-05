@@ -27,17 +27,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     POSITION_CHOICES = (
         ('Portero', u'Portero'),
         ('Defensa Central', u'Defensa Central'),
-        ('Defensa Lateral Derecho', u'Defensa Lateral Derecho'),
-        ('Defensa Lateral Izquierdo', u'Defensa Lateral Izquierdo'),
-        ('Media Punta (por el centro adelantado)', u'Media Punta (por el centro adelantado)'),
-        ('Medio Centro (en el centro)', u'Medio Centro (en el centro)'),
-        ('Medio Campo Defensivo', u'Medio Campo Defensivo'),
-        ('Medio Izquierda', u'Medio Izquierda'),
-        ('Medio Derecha', u'Medio Derecha'),
-        ('Delantero Centro (siempre pendientes de meter goles)', u'Delantero Centro (siempre pendientes de meter goles)'),
-        ('Extremo Derecho (los más adelantados por la banda)', u'Extremo Derecho (los más adelantados por la banda)'),
-        ('Extremo Izquierdo', u'Extremo Izquierdo'),
-        ('Segundo Delantero', u'Segundo Delantero'),
+        ('Lateral Derecho', u'Lateral Derecho'),
+        ('Lateral Izquierdo', u'Lateral Izquierdo'),
+        ('Centrocampista', u'Centrocampista'),
+        ('Media punta', u'Media punta'),
+        ('Delantero', u'Delantero'),
     )
 
     SEX_CHOICES = (
