@@ -21,7 +21,7 @@ class TeamViewSet(viewsets.ModelViewSet):
     """
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
-    filter_fields = ('name','players','game_day','place_origin',)
+    filter_fields = ('name', 'players', 'category', 'game_day', 'place_origin',)
     # if Team.category != "":
     #    print("The categoryssss is:",Team.category)
 
