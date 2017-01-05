@@ -4,6 +4,7 @@ from django.utils import timezone
 
 # Create your models here.
 
+
 class Field(models.Model):
 
     FIELD_TYPE_NATURE = 'Grama natural'
@@ -72,21 +73,23 @@ class Team(models.Model):
         (MODALITY_6, u'Fútbol 6'),
     )
 
-    CATEGORY_ENTERPRISE = 'Empresa'
-    CATEGORY_TOWN = 'Barrio'
-    CATEGORY_UNIVERSITY = 'Universidad'
-    CATEGORY_SCHOOL = 'Colegio'
-    CATEGORY_CHILDREN = 'Infantil'
-    CATEGORY_MASTER = 'Master'
+    ENTERPRISE_CATEGORY = 'Empresa'
+    TOWN_CATEGORY = 'Barrio'
+    UNIVERSITY_CATEGORY = 'Universidad'
+    SCHOOL_CATEGORY = 'Colegio'
+    CHILDREN_CATEGORY = 'Infantil'
+    MASTER_CATEGORY = 'Master'
+    WITHOUT_CATEGORY = 'Sin Categoría'
 
     CATEGORY_CHOICES = (
 
-        (CATEGORY_ENTERPRISE, u'Empresa'),
-        (CATEGORY_TOWN, u'Barrio'),
-        (CATEGORY_UNIVERSITY, u'Universidad'),
-        (CATEGORY_SCHOOL, u'Colegio'),
-        (CATEGORY_CHILDREN, u'Infantil'),
-        (CATEGORY_MASTER, u'Master'),
+        (ENTERPRISE_CATEGORY, u'Empresa'),
+        (TOWN_CATEGORY, u'Barrio'),
+        (UNIVERSITY_CATEGORY, u'Universidad'),
+        (SCHOOL_CATEGORY, u'Colegio'),
+        (CHILDREN_CATEGORY, u'Infantil'),
+        (MASTER_CATEGORY, u'Master'),
+        (WITHOUT_CATEGORY, u'Sin Categoría'),
     )
 
     BRANCH_CHOICES = (
@@ -146,37 +149,16 @@ class Team(models.Model):
     category = models.CharField(
         choices=CATEGORY_CHOICES,
         max_length=40,
-        default=True,
+        default = 'Sin Categoría',
         blank=False,
         verbose_name='Categoría'
     )
 
-    enterprise_name = models.CharField(
+    category_name = models.CharField(
         max_length=150,
         blank=True,
         null=True,
-        verbose_name='Nombre de la empresa'
-    )
-
-    town_name = models.CharField(
-        max_length=150,
-        blank=True,
-        null=True,
-        verbose_name='Nombre del barrio'
-    )
-
-    university_name = models.CharField(
-        max_length=150,
-        blank=True,
-        null=True,
-        verbose_name='Nombre de la Universidad'
-    )
-
-    school_name = models.CharField(
-        max_length=150,
-        blank=True,
-        null=True,
-        verbose_name='Nombre del colegio'
+        verbose_name='Nombre'
     )
 
     place_origin = models.ForeignKey(

@@ -3,6 +3,7 @@ from .models import Field,  Team, Match
 from rest_framework import serializers
 from userprofiles.serializers import UserSerializer
 
+
 class FieldSerializer(serializers.HyperlinkedModelSerializer):
     #url = serializers.HyperlinkedIdentityField(view_name='field-list',)
 
@@ -12,11 +13,12 @@ class FieldSerializer(serializers.HyperlinkedModelSerializer):
 
         #depth = 1
 
+
 class TeamSerializer(serializers.ModelSerializer):
 
 
-    #players=UserSerializer(many=True)
-    #place_origin = serializers.StringRelatedField()
+    # players=UserSerializer(many=True)
+    # place_origin = serializers.StringRelatedField()
     place_origin = serializers.SlugRelatedField(queryset=Field.objects.all(),slug_field='name')
 
     '''
@@ -28,8 +30,8 @@ class TeamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Team
         fields = ('url', 'name', 'image', 'players', 'modality', 'branch',
-            'category', 'enterprise_name', 'town_name', 'university_name',
-            'school_name', 'place_origin', 'game_day',)
+            'category', 'category_name', 'place_origin', 'game_day',)
+
         # depth = 1
 '''
 class TrainingCompetitionCenterSerializer(serializers.HyperlinkedModelSerializer):
