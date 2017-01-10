@@ -28,7 +28,7 @@ class TeamSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Team
-        fields = ('url','id', 'name', 'image', 'players', 'modality', 'branch',
+        fields = ('url', 'name', 'image', 'players', 'modality', 'branch',
             'category', 'category_name', 'place_origin', 'game_day',)
 
         # depth = 1
