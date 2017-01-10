@@ -99,11 +99,13 @@ class Team(models.Model):
 
 
     # user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    name = models.CharField(max_length=64,
-                            blank=True,
-                            primary_key=True,
-                            unique=True,
-                            db_index=True,)
+    name = models.CharField(
+        max_length=64,
+        primary_key=True,
+        # primary_key=True implies null=False and unique=True.
+        # unique=True implies db_index
+        # Only one primary key is allowed on an object
+    )
 
     image = models.ImageField(
         upload_to='fields',

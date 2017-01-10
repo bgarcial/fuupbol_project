@@ -25,6 +25,7 @@ from .views import home, home_files
 
 # Router provide an easy way of automatically determining the URL conf
 router = routers.DefaultRouter()
+#router = routers.SimpleRouter(trailing_slash=False,)
 router.register(r'users', UserViewSet)
 router.register(r'teams', TeamViewSet)
 router.register(r'fields', FieldViewSet)
@@ -42,6 +43,8 @@ urlpatterns = [
 
     # Wire up our API using automatic URL routing.
     url(r'^api/', include(router.urls)),
+
+#^api/ ^teams/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$ [name='team-detail']
 
     # If you're intending to use the browsable API you'll probably also want to add REST framework's
     # login and logout views.
