@@ -169,7 +169,8 @@ class Team(models.Model):
     place_origin = models.ForeignKey(
         'games_information.Field',
         verbose_name='Lugar de origen',
-
+        blank=True,
+        null=True,
     )
     # players = Hacer un query de los jugadores
     game_day = models.CharField(
