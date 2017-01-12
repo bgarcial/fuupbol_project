@@ -43,6 +43,7 @@ urlpatterns = [
 
     # Wire up our API using automatic URL routing.
     url(r'^api/', include(router.urls)),
+    #url(r'^api/teams/(?P<name>[-\w.]+)/', include(router.urls)),
 
 #^api/ ^teams/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$ [name='team-detail']
 

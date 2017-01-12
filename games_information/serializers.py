@@ -3,6 +3,9 @@ from .models import Field,  Team, Match
 from rest_framework import serializers
 from userprofiles.serializers import UserSerializer
 
+from django.template.defaultfilters import slugify
+
+
 
 class FieldSerializer(serializers.HyperlinkedModelSerializer):
     #url = serializers.HyperlinkedIdentityField(view_name='field-list',)
@@ -28,8 +31,15 @@ class TeamSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Team
-        fields = ('url', 'name', 'image', 'players', 'modality', 'branch',
-            'category', 'category_name', 'place_origin', 'game_day',)
+        fields = ('url', 'name', 'image', 'players', 'modality', 'branch', 'category', 'category_name', 'place_origin', 'game_day',)
+        #read_only_fields = ('slug_name',)
+
+    '''
+    def to_internal_value(self, data):
+        ret = super(TeamSerializer, self).to_internal_value(data)
+        ret['slug_name'] = slugify(ret['name'])
+        return ret
+    '''
 
         # depth = 1
 '''

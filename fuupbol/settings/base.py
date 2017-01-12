@@ -29,6 +29,7 @@ def get_env_variable(var_name):
         error_msg = "Set the %s environment variable" % var_name
         raise ImproperlyConfigured(error_msg)
 
+
 SECRET_KEY = get_env_variable('SECRET_KEY')
 
 ALLOWED_HOSTS = []
@@ -76,7 +77,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
-APPEND_SLASH=True
+APPEND_SLASH = True
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
