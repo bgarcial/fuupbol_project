@@ -135,8 +135,8 @@ class Team(models.Model):
     modality = models.CharField(
         choices=MODALITY_CHOICES,
         max_length=40,
-        default=True,
-        blank=False,
+        #default=True,
+        blank=True,
         verbose_name='Modalidad'
     )
 
@@ -155,7 +155,7 @@ class Team(models.Model):
         choices=CATEGORY_CHOICES,
         max_length=40,
         default = 'Sin Categoría',
-        blank=False,
+        blank=True,
         verbose_name='Categoría'
     )
 
@@ -174,7 +174,7 @@ class Team(models.Model):
     # players = Hacer un query de los jugadores
     game_day = models.CharField(
         max_length=150,
-        blank=False,
+        blank=True,
         verbose_name='Reservas o frecuencia de juego'
     )
 
