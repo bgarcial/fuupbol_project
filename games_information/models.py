@@ -102,7 +102,7 @@ class Team(models.Model):
 
     name = models.CharField(
         max_length=100,
-        # primary_key=True,
+        primary_key=True,
         # primary_key=True implies null=False and unique=True.
         # unique=True implies db_index
         # Only one primary key is allowed on an object
