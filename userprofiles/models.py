@@ -47,9 +47,17 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
     # http://stackoverflow.com/questions/25239164/issue-with-createsuperuser-when-implementing-custom-user-model     required ...
 
-    first_name = models.CharField(max_length=50, blank=False,)
+    first_name = models.CharField(
+        max_length=50,
+        blank=True,
+        null=True,
+    )
 
-    last_name=models.CharField(max_length=50, blank=False,)
+    last_name=models.CharField(
+        max_length=50,
+        blank=True,
+        null=True,
+    )
 
     age = models.PositiveSmallIntegerField(null=True)
 
@@ -60,7 +68,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         max_length=12,
         default=False,
         blank=True,
-        verbose_name='Sexo'
+        verbose_name='Sexo',
+        null=True,
     )
 
     is_player = models.BooleanField(default=False)

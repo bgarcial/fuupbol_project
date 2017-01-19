@@ -54,8 +54,10 @@ class Base64ImageField(serializers.ImageField):
 
 # Serializers define the API representation
 # Expose the model and their fields
+
+
 class UserSerializer(serializers.ModelSerializer):
-    #team = serializers.StringRelatedField()
+    # team = serializers.StringRelatedField()
     '''
     photo = Base64ImageField(
         max_length=None, use_url=True,
@@ -78,7 +80,7 @@ class UserSerializer(serializers.ModelSerializer):
                   'team_support', 'player_preferred', 'last_login',)
 
         # depth=1
-
+    # http://stackoverflow.com/questions/28389321/django-rest-framework-not-encrypting-passwords-when-being-logged-into-the-datab
     def create(self, validated_data):
         user = User(
             email=validated_data['email'],
