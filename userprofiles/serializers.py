@@ -9,7 +9,7 @@ from rest_framework.exceptions import APIException
 
 
 class UserSerializer(serializers.ModelSerializer):
-    username = models.CharField()
+    # username = models.CharField()
 
     '''
     def setup_eager_loading(queryset):
