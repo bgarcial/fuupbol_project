@@ -16,6 +16,15 @@ class UserSerializer(serializers.ModelSerializer):
       queryset = queryset.select_related('team',)
     '''
     # http://stackoverflow.com/questions/27586095/why-isnt-my-django-user-models-password-hashed/27586289
+
+    # override perform_update and perform_create and comparision with
+    # DRF 2.o version http://stackoverflow.com/questions/27468552/changing-serializer-fields-on-the-fly/#answer-27471503
+
+    # Perform update can be useful when is necessary some actions
+    # after or before save an object
+    # http://stackoverflow.com/questions/31819156/how-to-create-a-django-user-with-django-rest-framework-drf-3
+    # view save and deletion hooks http://www.django-rest-framework.org/api-guide/generic-views/#genericapiview
+    '''
     def create(self, validated_data):
         password = validated_data.pop('password', None)
         instance = self.Meta.model(**validated_data)
@@ -32,40 +41,6 @@ class UserSerializer(serializers.ModelSerializer):
                 setattr(instance, attr, value)
         instance.save()
         return instance
-
-
-    '''
-    # http://stackoverflow.com/questions/28389321/django-rest-framework-not-encrypting-passwords-when-being-logged-into-the-datab
-    def create(self, validated_data):
-        user = User(
-            email=validated_data['email'],
-            username=validated_data['username'],
-            first_name=validated_data['first_name'],
-            last_name=validated_data['last_name'],
-            age=validated_data['age'],
-            sex=validated_data['sex'],
-            photo=validated_data['photo'],
-            is_player=validated_data['is_player'],
-            team=validated_data['team'],
-            position=validated_data['position'],
-            is_staff=validated_data['is_staff'],
-            is_active=validated_data['is_active'],
-            is_superuser=validated_data['is_superuser'],
-            weight=validated_data['weight'],
-            height=validated_data['height'],
-            nickname=validated_data['nickname'],
-            number_matches=validated_data['number_matches'],
-            accomplished_matches=validated_data['accomplished_matches'],
-            time_available=validated_data['time_available'],
-            leg_profile=validated_data['leg_profile'],
-            number_shirt_preferred=validated_data['number_shirt_preferred'],
-            team_support=validated_data['team_support'],
-            player_preferred=validated_data['player_preferred'],
-            last_login=validated_data['last_login'],
-        )
-        user.set_password(validated_data['password'])
-        user.save()
-        return user
     '''
 
     class Meta:
@@ -76,11 +51,15 @@ class UserSerializer(serializers.ModelSerializer):
                   'is_player', 'weight', 'height', 'nickname',
                   'number_matches', 'accomplished_matches',
                   'time_available', 'leg_profile', 'number_shirt_preferred',
-                  'team_support', 'player_preferred', 'last_login',)
+                  'team_support', 'player_preferred', 'last_login',
+        )
+        extra_kwargs = {
+            'password': {
+                'write_only': True,
+            },
+        }
 
         # depth=1
 
 
-class NameDuplicationError(APIException):
-    status_code = status.HTTP_409_CONFLICT
-    default_detail = u'Duplicate Username'
+
