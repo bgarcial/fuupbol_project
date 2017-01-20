@@ -22,7 +22,7 @@ from games_information.views import (FieldViewSet, TeamViewSet, MatchViewSet)
 
 
 from .views import home, home_files
-
+from userprofiles import views
 # Router provide an easy way of automatically determining the URL conf
 router = routers.DefaultRouter()
 #router = routers.SimpleRouter(trailing_slash=False,)
@@ -43,9 +43,8 @@ urlpatterns = [
 
     # Wire up our API using automatic URL routing.
     url(r'^api/', include(router.urls)),
-    #url(r'^api/teams/(?P<name>[-\w.]+)/', include(router.urls)),
+    # url(r'^api/teams/(?P<name>[-\w.]+)/', include(router.urls)),
 
-#^api/ ^teams/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$ [name='team-detail']
 
     # If you're intending to use the browsable API you'll probably also want to add REST framework's
     # login and logout views.

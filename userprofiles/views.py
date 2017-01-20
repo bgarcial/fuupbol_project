@@ -6,6 +6,8 @@ from rest_framework import filters
 from .models import User
 from .serializers import UserSerializer
 
+from rest_framework.response import Response
+
 # Viewsets define the behavior of the view
 
 
@@ -16,5 +18,6 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
     filter_fields = ('username', 'is_player', 'first_name', 'last_name', 'team' , 'email', )
+
 
 
