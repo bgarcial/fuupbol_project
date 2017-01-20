@@ -21,14 +21,14 @@ class UserViewSet(viewsets.ModelViewSet):
     filter_fields = ('username', 'is_player', 'first_name', 'last_name', 'team' , 'email', )
 
     def perform_create(self, serializer):
-        password = make_password(self.request.data['password'])
-
-        serializer.save(password=password)
+        hashed_password = make_password(serializer.validated_data['password']) # get the hashed password
+        serializer.validated_data['password'] = hashed_password
+        user = super(UserViewSet, self).perform_create(serializer) # create a user
 
     def perform_update(self, serializer):
-        password = make_password(self.request.data['password'])
-
-        serializer.save(password=password)
+        hashed_password = make_password(serializer.validated_data['password']) # get the hashed password
+        serializer.validated_data['password'] = hashed_password
+        user = super(UserViewSet, self).perform_update(serializer) # create a user
 
 
 

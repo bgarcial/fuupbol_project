@@ -53,12 +53,14 @@ class UserSerializer(serializers.ModelSerializer):
                   'time_available', 'leg_profile', 'number_shirt_preferred',
                   'team_support', 'player_preferred', 'last_login',
         )
+        '''
         extra_kwargs = {
             'password': {
                 'write_only': True,
+
             },
         }
-
+        '''
         # depth=1
 
 
