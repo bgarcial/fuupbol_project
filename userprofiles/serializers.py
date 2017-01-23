@@ -1,8 +1,8 @@
 from __future__ import unicode_literals
 from django.db import models
 from .models import User
-from rest_framework import serializers, status
-from rest_framework.exceptions import APIException
+from rest_framework import serializers
+
 
 # Serializers define the API representation
 # Expose the model and their fields
@@ -41,7 +41,6 @@ class UserSerializer(serializers.ModelSerializer):
                 setattr(instance, attr, value)
         instance.save()
         return instance
-
 
     class Meta:
         model = User
