@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 from django.db import models
 from .models import User
 from rest_framework import serializers
+from rest_framework.validators import UniqueValidator
 
 
 # Serializers define the API representation
@@ -9,7 +10,17 @@ from rest_framework import serializers
 
 
 class UserSerializer(serializers.ModelSerializer):
-    # username = models.CharField()
+    username = serializers.CharField()
+    #username = serializers.CharField(validators=[UniqueValidator(queryset=User.objects.all())])
+    email = serializers.EmailField(validators=[UniqueValidator(queryset=User.objects.all())])
+
+    def validate_username(self, value):
+        user = User.objects.filter(username=value)
+        if value == user:
+            return value
+        raise serializers.ValidationError('El username ya esta ocupado')
+
+
 
     '''
     def setup_eager_loading(queryset):
@@ -50,10 +61,9 @@ class UserSerializer(serializers.ModelSerializer):
                   'is_player', 'weight', 'height', 'nickname',
                   'number_matches', 'accomplished_matches',
                   'time_available', 'leg_profile', 'number_shirt_preferred',
-                  'team_support', 'player_preferred', 'last_login',
-        )
+                  'team_support', 'player_preferred', 'last_login',)
 
-        # depth=1
+
 
 
 

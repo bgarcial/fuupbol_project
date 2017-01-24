@@ -97,7 +97,6 @@ class Team(models.Model):
         ('Femenino', "Femenino"),
     )
 
-
     # user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     name = models.CharField(
