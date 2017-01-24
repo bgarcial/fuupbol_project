@@ -12,13 +12,13 @@ from rest_framework.validators import UniqueValidator
 class UserSerializer(serializers.ModelSerializer):
     username = serializers.CharField()
     #username = serializers.CharField(validators=[UniqueValidator(queryset=User.objects.all())])
-    email = serializers.EmailField(validators=[UniqueValidator(queryset=User.objects.all())])
+    email = serializers.EmailField(validators=[UniqueValidator(queryset=User.objects.all(), message='Lo sentimos, alguien ya ha sido fichado con este correo electrónico')])
 
     def validate_username(self, value):
         user = User.objects.filter(username=value)
         if value == user:
             return value
-        raise serializers.ValidationError('Lo sentimos, alguien ya tiene tu nombre de usuario')
+        raise serializers.ValidationError('Lo sentimos, existe un fichaje con este nombre de usuario')
 
 
 
