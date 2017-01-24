@@ -18,7 +18,7 @@ class UserSerializer(serializers.ModelSerializer):
         user = User.objects.filter(username=value)
         if value == user:
             return value
-        raise serializers.ValidationError('El username ya esta ocupado')
+        raise serializers.ValidationError('Lo sentimos, alguien ya tiene tu nombre de usuario')
 
 
 
