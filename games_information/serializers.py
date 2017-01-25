@@ -4,6 +4,7 @@ from rest_framework import serializers
 from userprofiles.serializers import UserSerializer
 
 from django.template.defaultfilters import slugify
+from rest_framework.validators import UniqueValidator
 
 
 
@@ -21,6 +22,7 @@ class TeamSerializer(serializers.ModelSerializer):
 
     # players=UserSerializer(many=True)
     # place_origin = serializers.StringRelatedField()
+    name = serializers.CharField(validators=[UniqueValidator(queryset=Team.objects.all(), message='Lo sentimos, ya existe un equipo con este nombre')])
     place_origin = serializers.SlugRelatedField(queryset=Field.objects.all(),slug_field='name')
 
     '''
