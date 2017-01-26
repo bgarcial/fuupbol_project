@@ -199,7 +199,7 @@ class Match(models.Model):
 
     home_team = models.ForeignKey(
         'games_information.Team',
-        null=True,
+        null=False,
         blank=True,
         verbose_name='Equipo local',
         related_name='hometeam'
@@ -207,7 +207,7 @@ class Match(models.Model):
 
     away_team = models.ForeignKey(
         'games_information.Team',
-        null=True,
+        null=False,
         blank=True,
         verbose_name='Equipo visitante',
         #related_name=''
@@ -217,7 +217,7 @@ class Match(models.Model):
 
     field = models.ForeignKey(
         'games_information.Field',
-        null=True,
+        null=False,
         blank=True,
         verbose_name='Lugar'
 
