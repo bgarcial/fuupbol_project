@@ -2,8 +2,6 @@ from django.db import models
 from django.conf import settings
 from django.utils import timezone
 
-
-
 # Create your models here.
 
 
@@ -201,16 +199,16 @@ class Match(models.Model):
 
     home_team = models.ForeignKey(
         'games_information.Team',
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         verbose_name='Equipo local',
         related_name='hometeam'
     )
 
     away_team = models.ForeignKey(
         'games_information.Team',
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         verbose_name='Equipo visitante',
         #related_name=''
     )
@@ -219,8 +217,8 @@ class Match(models.Model):
 
     field = models.ForeignKey(
         'games_information.Field',
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         verbose_name='Lugar'
 
     )

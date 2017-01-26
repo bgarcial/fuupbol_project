@@ -69,15 +69,6 @@ class MatchSerializer(serializers.ModelSerializer):
     # http://stackoverflow.com/questions/28689281/what-is-the-read-write-equivalent-of-serializers-stringrelatedfield
     # http://www.django-rest-framework.org/api-guide/relations/#slugrelatedfield
 
-
-    '''
-    def setup_eager_loading(queryset):
-
-        queryset = queryset.prefetch_related('field',)
-
-
-        queryset = queryset.select_related('field','home_team','away_team',)
-    '''
     class Meta:
         model = Match
         fields = ('url', 'id', 'home_team', 'away_team','field','match_date',
