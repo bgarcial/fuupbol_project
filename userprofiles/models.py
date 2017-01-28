@@ -74,11 +74,11 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     is_player = models.BooleanField(default=False)
 
-    team = models.ForeignKey(
+    team = models.ManyToManyField(
         'games_information.Team',
-        null=True,
         blank=True,
         verbose_name='Equipo en el que juega',
+        related_name='players'
 
     )
     '''

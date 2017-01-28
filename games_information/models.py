@@ -116,11 +116,13 @@ class Team(models.Model):
         verbose_name='Imagen de la plantilla o escudo'
     )
 
+    '''
     players = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
         related_name='players',
         blank=True,
     )
+    '''
 
     '''
     modality = MultiSelectField(
