@@ -25,7 +25,7 @@ class TeamViewSet(viewsets.ModelViewSet):
     # lookup_value_regex = '[0-9.]+'
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
-    filter_fields = ('name', 'players', 'branch', 'category', 'game_day', 'place_origin',)
+    filter_fields = ('name', 'branch', 'category', 'game_day', 'place_origin',)
     # lookup_field = 'slug_name'
     # if Team.category != "":
     #    print("The categoryssss is:",Team.category)
