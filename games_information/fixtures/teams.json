@@ -1,51 +1,109 @@
 [{
     "model": "games_information.team",
-    "pk": "Alav\u00e9s",
+    "pk": "",
     "fields": {
-        "image": "",
-        "modality": "F\u00fatbol 7",
-        "place_origin": "Se\u00f1or Gol",
-        "game_day": "Miercoles",
-        "players": []
+        "image": "fields/Czk9RhJWQAEnB5D.jpg",
+        "modality": "F\u00fatbol 8",
+        "branch": "Masculino",
+        "category": "Barrio",
+        "category_name": "sdsd",
+        "place_origin": 1,
+        "game_day": "Domingos"
     }
 }, {
     "model": "games_information.team",
-    "pk": "Aston Huila",
+    "pk": "Fichaje App",
     "fields": {
-        "image": "fields/Aston_Huila.png",
-        "modality": "F\u00fatbol 7",
-        "place_origin": "Chalacas Gol",
-        "game_day": "Jueves",
-        "players": []
+        "image": "fields/Fichaje_App.png",
+        "modality": "F\u00fatbol 8",
+        "branch": "Masculino",
+        "category": "Empresa",
+        "category_name": "Fichaje App",
+        "place_origin": 2,
+        "game_day": "S\u00e1bado"
+    }
+}, {
+    "model": "games_information.team",
+    "pk": "F\u00fatbol Fun",
+    "fields": {
+        "image": "",
+        "modality": "F\u00fatbol 6",
+        "branch": "Masculino",
+        "category": "Infantil",
+        "category_name": "Cebollitas",
+        "place_origin": 1,
+        "game_day": "Martes"
+    }
+}, {
+    "model": "games_information.team",
+    "pk": "Independiente Medell\u00edn",
+    "fields": {
+        "image": "",
+        "modality": "",
+        "branch": "False",
+        "category": "Sin Categor\u00eda",
+        "category_name": null,
+        "place_origin": 2,
+        "game_day": ""
     }
 }, {
     "model": "games_information.team",
     "pk": "Manchester United",
     "fields": {
         "image": "",
-        "modality": "F\u00fatbol 7",
-        "place_origin": "La Bombonera",
-        "game_day": "Sabado",
-        "players": []
+        "modality": "F\u00fatbol 6",
+        "branch": "Masculino",
+        "category": "Empresa",
+        "category_name": "TecnoCinco",
+        "place_origin": 12,
+        "game_day": "Sabado"
     }
 }, {
     "model": "games_information.team",
-    "pk": "Niupi",
+    "pk": "margarita",
     "fields": {
-        "image": "",
-        "modality": "F\u00fatbol 11",
-        "place_origin": "La Jaula del Angel",
-        "game_day": "Domingo",
-        "players": []
+        "image": "fields/margarita.png",
+        "modality": "F\u00fatbol 8",
+        "branch": "Masculino",
+        "category": "Universidad",
+        "category_name": "eafit",
+        "place_origin": 3,
+        "game_day": "Jueves"
     }
 }, {
     "model": "games_information.team",
-    "pk": "San Francis",
+    "pk": "Niupi FC",
+    "fields": {
+        "image": "fields/Niupi_FC.png",
+        "modality": "F\u00fatbol 6",
+        "branch": "Masculino",
+        "category": "Colegio",
+        "category_name": "Niupi",
+        "place_origin": 2,
+        "game_day": "S\u00e1bado"
+    }
+}, {
+    "model": "games_information.team",
+    "pk": "Sempiternos FC",
     "fields": {
         "image": "",
-        "modality": "F\u00fatbol 7",
-        "place_origin": "Polideportivo Sur Parque Estadio",
-        "game_day": "Domingo",
-        "players": []
+        "modality": "F\u00fatbol 6",
+        "branch": "Masculino",
+        "category": "Colegio",
+        "category_name": "La Salle de Bello",
+        "place_origin": 3,
+        "game_day": "S\u00e1bado"
+    }
+}, {
+    "model": "games_information.team",
+    "pk": "Sin equipo",
+    "fields": {
+        "image": "fields/Czk9RhJWQAEnB5D.jpg",
+        "modality": "",
+        "branch": "",
+        "category": "",
+        "category_name": "",
+        "place_origin": null,
+        "game_day": ""
     }
 }]

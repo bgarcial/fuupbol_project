@@ -1,122 +1,97 @@
 [{
     "model": "games_information.match",
-    "pk": 3,
+    "pk": 28,
     "fields": {
-        "home_team": "San Francis",
-        "away_team": "Niupi",
+        "home_team": "Sempiternos FC",
+        "away_team": "Manchester United",
+        "check_match_away_team": false,
+        "field": 3,
+        "match_date": "2017-01-24T14:00:55Z",
+        "status_challenge": "Aceptado",
+        "home_team_players_accept": [],
+        "away_team_players_accept": [],
+        "home_team_players_cancel": [],
+        "away_team_players_cancel": [],
+        "fichaje_players_match": ["jcsalaz", "Benji"]
+    }
+}, {
+    "model": "games_information.match",
+    "pk": 29,
+    "fields": {
+        "home_team": "Manchester United",
+        "away_team": "Sempiternos FC",
         "check_match_away_team": true,
-        "field": "Stanford Bridge",
-        "match_date": "2016-10-30T12:33:25Z",
-        "status_challenge": "Pendiente"
+        "field": 10,
+        "match_date": "2017-01-02T09:00:05Z",
+        "status_challenge": "Pendiente",
+        "home_team_players_accept": [],
+        "away_team_players_accept": [],
+        "home_team_players_cancel": [],
+        "away_team_players_cancel": [],
+        "fichaje_players_match": []
     }
 }, {
     "model": "games_information.match",
-    "pk": 5,
+    "pk": 30,
     "fields": {
-        "home_team": "San Francis",
-        "away_team": "Manchester United",
+        "home_team": "margarita",
+        "away_team": "F\u00fatbol Fun",
         "check_match_away_team": false,
-        "field": "Atanasio Girardot",
-        "match_date": "2016-10-30T13:35:04.105Z",
-        "status_challenge": "Aceptado"
+        "field": 3,
+        "match_date": "2017-01-15T22:14:36Z",
+        "status_challenge": "Pendiente",
+        "home_team_players_accept": [],
+        "away_team_players_accept": [],
+        "home_team_players_cancel": [],
+        "away_team_players_cancel": [],
+        "fichaje_players_match": []
     }
 }, {
     "model": "games_information.match",
-    "pk": 6,
+    "pk": 31,
     "fields": {
         "home_team": "Manchester United",
-        "away_team": "Alav\u00e9s",
-        "check_match_away_team": false,
-        "field": "Chalacas Gol",
-        "match_date": "2016-12-31T21:30:00Z",
-        "status_challenge": "Pendiente"
-    }
-}, {
-    "model": "games_information.match",
-    "pk": 8,
-    "fields": {
-        "home_team": "Niupi",
-        "away_team": "Manchester United",
-        "check_match_away_team": false,
-        "field": "La Bombonera",
-        "match_date": "2016-11-10T15:00:00Z",
-        "status_challenge": "Aceptado"
-    }
-}, {
-    "model": "games_information.match",
-    "pk": 9,
-    "fields": {
-        "home_team": "Alav\u00e9s",
-        "away_team": "Manchester United",
-        "check_match_away_team": false,
-        "field": "La Jaula del Angel",
-        "match_date": "2016-11-02T18:00:00Z",
-        "status_challenge": "Aceptado"
-    }
-}, {
-    "model": "games_information.match",
-    "pk": 10,
-    "fields": {
-        "home_team": "Manchester United",
-        "away_team": "Niupi",
+        "away_team": "F\u00fatbol Fun",
         "check_match_away_team": true,
-        "field": "Manuel Murillo Toro",
-        "match_date": "2016-10-13T11:09:00Z",
-        "status_challenge": "Cancelado"
+        "field": 10,
+        "match_date": "2017-01-02T09:00:05Z",
+        "status_challenge": "Aceptado",
+        "home_team_players_accept": ["paoc", "nuevo", "alejomarti"],
+        "away_team_players_accept": ["samevivi", "jcsalaz", "giraldoesteban"],
+        "home_team_players_cancel": ["fichaje", "mike"],
+        "away_team_players_cancel": ["Bluse"],
+        "fichaje_players_match": ["Oliver"]
     }
 }, {
     "model": "games_information.match",
-    "pk": 13,
+    "pk": 32,
     "fields": {
-        "home_team": "San Francis",
-        "away_team": "Alav\u00e9s",
+        "home_team": "Sempiternos FC",
+        "away_team": "F\u00fatbol Fun",
         "check_match_away_team": false,
-        "field": "Aristigol",
-        "match_date": "2016-11-01T04:07:42Z",
-        "status_challenge": "Pendiente"
+        "field": 3,
+        "match_date": "2017-01-15T16:00:38Z",
+        "status_challenge": "Aceptado",
+        "home_team_players_accept": ["paoc", "nuevo", "alejomarti"],
+        "away_team_players_accept": ["jcsalaz", "giraldoesteban", "mike"],
+        "home_team_players_cancel": ["alejomarti", "Tom"],
+        "away_team_players_cancel": ["fichaje", "samevivi"],
+        "fichaje_players_match": ["giraldoesteban", "erick"]
     }
 }, {
     "model": "games_information.match",
-    "pk": 15,
+    "pk": 33,
     "fields": {
-        "home_team": "Manchester United",
-        "away_team": "Niupi",
+        "home_team": "Niupi FC",
+        "away_team": "Manchester United",
         "check_match_away_team": false,
-        "field": "Sport Roof",
-        "match_date": "2016-11-10T15:00:00Z",
-        "status_challenge": "Aceptado"
-    }
-}, {
-    "model": "games_information.match",
-    "pk": 18,
-    "fields": {
-        "home_team": "Manchester United",
-        "away_team": "San Francis",
-        "check_match_away_team": false,
-        "field": "Envigol",
-        "match_date": "2016-11-13T22:46:31Z",
-        "status_challenge": "Pendiente"
-    }
-}, {
-    "model": "games_information.match",
-    "pk": 19,
-    "fields": {
-        "home_team": "Manchester United",
-        "away_team": "San Francis",
-        "check_match_away_team": false,
-        "field": "Elite del F\u00fatbol",
-        "match_date": "2016-11-06T21:21:19Z",
-        "status_challenge": "Cancelado"
-    }
-}, {
-    "model": "games_information.match",
-    "pk": 20,
-    "fields": {
-        "home_team": "Aston Huila",
-        "away_team": "Niupi",
-        "check_match_away_team": false,
-        "field": "Los Estadios",
-        "match_date": "2016-11-19T01:00:23Z",
-        "status_challenge": "Cancelado"
+        "field": 2,
+        "match_date": "2017-01-30T00:00:04Z",
+        "status_challenge": "Aceptado",
+        "home_team_players_accept": ["paoc", "Benji", "Oliver", "Tom", "Bluse"],
+        "away_team_players_accept": ["jcsalaz", "giraldoesteban", "fichaje", "mike", "sanalejo04"],
+        "home_team_players_cancel": [],
+        "away_team_players_cancel": [],
+        "fichaje_players_match": ["paoc", "alejomarti", "samevivi"]
     }
 }]
