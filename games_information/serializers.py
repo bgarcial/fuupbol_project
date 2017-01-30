@@ -20,14 +20,14 @@ class FieldSerializer(serializers.HyperlinkedModelSerializer):
 
 class TeamSerializer(serializers.ModelSerializer):
 
-    players = UserSerializer(many=True, read_only=True)
-    '''
+    # players = UserSerializer(many=True, read_only=True)
+
     players = serializers.PrimaryKeyRelatedField(
         many = True,
         read_only = True,
 
     )
-    '''
+
     name = serializers.CharField(validators=[UniqueValidator(queryset=Team.objects.all(), message='Lo sentimos, ya existe un equipo con este nombre')])
     place_origin = serializers.SlugRelatedField(queryset=Field.objects.all(),slug_field='name')
 
