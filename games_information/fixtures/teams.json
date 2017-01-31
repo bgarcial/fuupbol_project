@@ -1,17 +1,5 @@
 [{
     "model": "games_information.team",
-    "pk": "",
-    "fields": {
-        "image": "fields/Czk9RhJWQAEnB5D.jpg",
-        "modality": "F\u00fatbol 8",
-        "branch": "Masculino",
-        "category": "Barrio",
-        "category_name": "sdsd",
-        "place_origin": 1,
-        "game_day": "Domingos"
-    }
-}, {
-    "model": "games_information.team",
     "pk": "Fichaje App",
     "fields": {
         "image": "fields/Fichaje_App.png",
