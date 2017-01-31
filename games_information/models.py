@@ -123,16 +123,6 @@ class Team(models.Model):
         blank=True,
     )
     '''
-
-    '''
-    modality = MultiSelectField(
-        max_length=255,
-        choices=MODALITY_CHOICES,
-        blank=True,
-        null=True
-
-    )
-    '''
     modality = models.CharField(
         choices=MODALITY_CHOICES,
         max_length=40,

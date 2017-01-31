@@ -5,6 +5,7 @@ from django.db import models
 from django.utils import timezone
 from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, UserManager, PermissionsMixin
+
 from .managers import UserManager
 from django import forms
 
@@ -18,7 +19,6 @@ from django import forms
 # https://docs.djangoproject.com/en/dev/ref/contrib/auth/#manager-methods
 
 # Create your models here.
-
 
 class User(AbstractBaseUser, PermissionsMixin):
     # Using PermissionsMixin
@@ -74,9 +74,10 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     is_player = models.BooleanField(default=False)
 
-    team = models.ManyToManyField(
+    team = models.ForeignKey(
         'games_information.Team',
         blank=True,
+        null=True,
         verbose_name='Equipo en el que juega',
         related_name='players'
 
