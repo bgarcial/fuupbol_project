@@ -32,10 +32,8 @@ class Field(models.Model):
 
     name = models.CharField(
         max_length=150,
-        unique=True,
-        # primary_key=True,
-
-        )
+        primary_key=True,
+    )
 
     field_type = models.CharField(
         choices=FIELD_TYPE_CHOICES,
@@ -73,6 +71,7 @@ class Team(models.Model):
         (MODALITY_6, u'Fútbol 6'),
     )
 
+    EMPTY_CATEGORY = ''
     ENTERPRISE_CATEGORY = 'Empresa'
     TOWN_CATEGORY = 'Barrio'
     UNIVERSITY_CATEGORY = 'Universidad'
@@ -83,6 +82,7 @@ class Team(models.Model):
 
     CATEGORY_CHOICES = (
 
+        (EMPTY_CATEGORY, u''),
         (ENTERPRISE_CATEGORY, u'Empresa'),
         (TOWN_CATEGORY, u'Barrio'),
         (UNIVERSITY_CATEGORY, u'Universidad'),
@@ -93,6 +93,7 @@ class Team(models.Model):
     )
 
     BRANCH_CHOICES = (
+        ('', ""),
         ('Masculino', "Masculino"),
         ('Femenino', "Femenino"),
     )

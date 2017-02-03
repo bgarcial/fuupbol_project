@@ -28,7 +28,7 @@ from .views import home, home_files
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'teams', TeamViewSet)
-router.register(r'fields', FieldViewSet)
+router.register(r'fields', FieldViewSet, 'fields')
 #router.register(r'trainingcompetitioncenter', TrainingCompetitionCenterViewSet)
 router.register(r'matchs', MatchViewSet)
 
@@ -42,7 +42,7 @@ urlpatterns = [
         home_files, name='home-files'),
 
     # Wire up our API using automatic URL routing.
-    url(r'^api/', include(router.urls)),
+    url(r'^api/', include(router.urls,)),
 
 
     # If you're intending to use the browsable API you'll probably also want to add REST framework's

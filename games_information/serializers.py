@@ -9,11 +9,11 @@ from rest_framework.validators import UniqueValidator
 
 
 class FieldSerializer(serializers.HyperlinkedModelSerializer):
-    #url = serializers.HyperlinkedIdentityField(view_name='field-list',)
+    url = serializers.HyperlinkedIdentityField(view_name = 'fields-detail',)
 
     class Meta:
         model = Field
-        fields = ('url', 'id','name','field_type','modality','photo','location')
+        fields = ('url', 'name', 'field_type', 'modality', 'photo', 'location')
 
         #depth = 1
 
