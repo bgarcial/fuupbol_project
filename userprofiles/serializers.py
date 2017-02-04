@@ -38,6 +38,7 @@ class UserSerializer(serializers.ModelSerializer):
     # http://stackoverflow.com/questions/31819156/how-to-create-a-django-user-with-django-rest-framework-drf-3
     # view save and deletion hooks http://www.django-rest-framework.org/api-guide/generic-views/#genericapiview
 
+    '''
     def create(self, validated_data):
         password = validated_data.pop('password', None)
         instance = self.Meta.model(**validated_data)
@@ -54,6 +55,7 @@ class UserSerializer(serializers.ModelSerializer):
                 setattr(instance, attr, value)
         instance.save()
         return instance
+    '''
 
     class Meta:
         model = User
