@@ -22,7 +22,7 @@ class TeamViewSet(viewsets.ModelViewSet):
     API endpoint that allows users to be viewed or edited.
     """
     # lookup_field = 'name'
-    # lookup_value_regex = '[0-9.]+'
+    #lookup_value_regex = '[\d\/. ()\-+]+'
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
     filter_fields = ('name', 'branch', 'category', 'game_day', 'place_origin',)

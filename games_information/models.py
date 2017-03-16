@@ -1,6 +1,8 @@
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
+from django.utils.translation import ugettext_lazy as _
+from django.core.validators import RegexValidator
 
 # Create your models here.
 
@@ -100,6 +102,7 @@ class Team(models.Model):
 
     # user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
+
     name = models.CharField(
         max_length=100,
         primary_key=True,
@@ -107,6 +110,25 @@ class Team(models.Model):
         # unique=True implies db_index
         # Only one primary key is allowed on an object
     )
+    '''
+    name = models.CharField(
+        _('name'),
+        max_length=30,
+        primary_key=True,
+        unique=True,
+        help_text=_('Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.'),
+        validators=[
+            RegexValidator(
+                r'^[\d\/. ()\-+]+$',
+                _('Enter a valid name team. This value may contain only '
+                  'letters, numbers ' 'and @/./+/-/_ characters.')
+            ),
+        ],
+        error_messages={
+            'unique': _("A team with that name already exists."),
+        },
+    )
+    '''
 
     # slug_name = models.SlugField(unique=True, max_length=100)
 

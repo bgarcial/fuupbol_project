@@ -6,6 +6,9 @@ from django.utils import timezone
 from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, UserManager, PermissionsMixin
 
+from django.utils.translation import ugettext_lazy as _
+from django.core.validators import RegexValidator
+
 from .managers import UserManager
 from django import forms
 
@@ -19,6 +22,7 @@ from django import forms
 # https://docs.djangoproject.com/en/dev/ref/contrib/auth/#manager-methods
 
 # Create your models here.
+
 
 class User(AbstractBaseUser, PermissionsMixin):
     # Using PermissionsMixin
@@ -39,11 +43,30 @@ class User(AbstractBaseUser, PermissionsMixin):
         ('Femenino', "Femenino"),
     )
 
+    '''
     username = models.CharField(
         max_length=15,
         unique=True,
         db_index=True,
         primary_key=True
+    )
+    '''
+    username = models.CharField(
+        _('username'),
+        max_length=30,
+        primary_key=True,
+        unique=True,
+        help_text=_('Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.'),
+        validators=[
+            RegexValidator(
+                r'^[\w.ñ@+-]+$',
+                _('Enter a valid username. This value may contain only '
+                  'letters, numbers ' 'and @/./+/-/_ characters.')
+            ),
+        ],
+        error_messages={
+            'unique': _("A user with that username already exists."),
+        },
     )
     # http://stackoverflow.com/questions/25239164/issue-with-createsuperuser-when-implementing-custom-user-model     required ...
 
