@@ -16,7 +16,7 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    lookup_value_regex = '[\w.ñ@+-]+'r'^[\w.ñ@+-]+$',
+    lookup_value_regex = '[\w.ñ@+-]+'
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
     filter_fields = ('email', 'username', 'is_player', 'first_name',

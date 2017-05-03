@@ -130,9 +130,6 @@ class Team(models.Model):
         },
     )
 
-
-    # slug_name = models.SlugField(unique=True, max_length=100)
-
     image = models.ImageField(
         upload_to='fields',
         blank=True,

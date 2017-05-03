@@ -45,7 +45,7 @@ urlpatterns = [
     url(r'^api/', include(router.urls,)),
 
     # url(r'^api/teams/(?P<name>[-\w. ]+)/?', include(router.urls,)),
-    url(r'^api/teams/(?P<name>[-\w.]+)/?', include(router.urls,)),
+    url(r'^api/teams/(?P<name>[-\w.]+(?:%20[-\w.]+)*)/?', include(router.urls,)),
 
 
     # If you're intending to use the browsable API you'll probably also want to add REST framework's

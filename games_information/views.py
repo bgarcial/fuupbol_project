@@ -21,7 +21,7 @@ class TeamViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    # lookup_field = 'name'
+    #lookup_field = 'name'
     lookup_value_regex = '[\w.ñ@+-]+'
     #lookup_value_regex = '[\d\/. ()\-+]+'
     queryset = Team.objects.all()
