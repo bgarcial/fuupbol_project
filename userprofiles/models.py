@@ -43,19 +43,14 @@ class User(AbstractBaseUser, PermissionsMixin):
         ('Femenino', "Femenino"),
     )
 
-    '''
-    username = models.CharField(
-        max_length=15,
-        unique=True,
-        db_index=True,
-        primary_key=True
-    )
-    '''
+
     username = models.CharField(
         _('username'),
         max_length=30,
-        primary_key=True,
-        unique=True,
+        # primary_key=True,
+        # unique=True,
+        # null = True,
+        # blank=True,
         help_text=_('Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.'),
         validators=[
             RegexValidator(
@@ -68,6 +63,7 @@ class User(AbstractBaseUser, PermissionsMixin):
             'unique': _("A user with that username already exists."),
         },
     )
+
     # http://stackoverflow.com/questions/25239164/issue-with-createsuperuser-when-implementing-custom-user-model     required ...
 
     first_name = models.CharField(
@@ -115,7 +111,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
     '''
 
-    email = models.EmailField(max_length=254, unique=True)
+    email = models.EmailField(max_length=254, primary_key=True)
 
     is_staff = models.BooleanField(
         default=True,

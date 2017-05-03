@@ -22,6 +22,7 @@ class TeamViewSet(viewsets.ModelViewSet):
     API endpoint that allows users to be viewed or edited.
     """
     # lookup_field = 'name'
+    lookup_value_regex = '[\w.ñ@+-]+'
     #lookup_value_regex = '[\d\/. ()\-+]+'
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
@@ -56,7 +57,8 @@ class MatchViewSet(viewsets.ModelViewSet):
     """
     queryset = Match.objects.all()
     serializer_class = MatchSerializer
-    filter_fields = ('home_team','away_team', 'status_challenge', 'fichaje_players_match', )
+    filter_fields = ('home_team','away_team', 'status_challenge',
+        'fichaje_players_match', )
 
     def update(self, request, *args, **kwargs):
         kwargs['partial'] = True

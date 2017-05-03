@@ -7,6 +7,8 @@ from .models import User
 # Django use special forms to create and edit UserAdmin forms
 # due to these was thinked only for the django original user model
 # and here  we are using a custom django user model with Abstract
+
+
 class CustomUserChangeForm(UserChangeForm):
 
     position = forms.MultipleChoiceField(
@@ -18,10 +20,12 @@ class CustomUserChangeForm(UserChangeForm):
         model = User
         widgets = {
             'sex': forms.RadioSelect,
-            #'position': CheckboxSelectMultiple,
+            # 'position': CheckboxSelectMultiple,
         }
-        fields= ('position',)
+        fields = ('position',)
+
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
+
