@@ -10,7 +10,6 @@ from rest_framework.validators import UniqueValidator
 
 
 class UserSerializer(serializers.ModelSerializer):
-    # username = serializers.CharField()
     username = serializers.CharField(validators=[UniqueValidator(queryset=User.objects.all(), message='Lo sentimos, existe un fichaje con este nombre de usuario')])
     email = serializers.EmailField(validators=[UniqueValidator(queryset=User.objects.all(), message='Lo sentimos, alguien ya ha sido fichado con este correo electrónico')])
 

@@ -102,7 +102,7 @@ class Team(models.Model):
 
     # user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
-
+    '''
     name = models.CharField(
         max_length=100,
         primary_key=True,
@@ -115,22 +115,20 @@ class Team(models.Model):
         _('name'),
         max_length=30,
         primary_key=True,
-        unique=True,
+        # unique=True,
         help_text=_('Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.'),
         validators=[
             RegexValidator(
-                r'^[\d\/. ()\-+]+$',
+                # r'^[\w.ñ@+-]+$',
+                r'^[\d\/. ()\-+ ]+$',
                 _('Enter a valid name team. This value may contain only '
-                  'letters, numbers ' 'and @/./+/-/_ characters.')
+                  'letters, numbers ' 'and ./+/-/_ characters.')
             ),
         ],
         error_messages={
             'unique': _("A team with that name already exists."),
         },
     )
-    '''
-
-    # slug_name = models.SlugField(unique=True, max_length=100)
 
     image = models.ImageField(
         upload_to='fields',
@@ -196,6 +194,19 @@ class Team(models.Model):
     def __str__(self):
         return '%s' % (self.name)
 
+    '''
+    def save(self, *args, **kwargs):
+        self.full_clean() # performs regular validation then clean()
+        super(Team, self).save(*args, **kwargs)
+
+    def clean(self):
+        """
+        Custom validation (read docs)
+        """
+        if self.name:
+            self.name = self.name.strip()
+            http://stackoverflow.com/questions/5043012/django-trim-whitespaces-from-charfield
+    '''
 
 class Match(models.Model):
 
