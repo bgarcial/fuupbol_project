@@ -179,8 +179,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
 
-        player_full_name = '%s %s %s' % (self.nickname, self.first_name,
-            self.last_name)
-        return player_full_name.strip()
-        #return "{},{},{}".format(self.nickname, self.first_name, self.last_name )
+        player_email_identifier = '%s' % (self.email)
+        # return player_full_name.strip()
+        return player_email_identifier
+        # return "{},{},{}".format(self.nickname, self.first_name, self.last_name )
 
