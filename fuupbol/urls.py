@@ -18,11 +18,14 @@ from django.contrib import admin
 
 from rest_framework import routers
 from userprofiles.views import (UserViewSet,)
-from games_information.views import (FieldViewSet, TeamViewSet, MatchViewSet)
+from games_information.views import (FieldViewSet, TeamViewSet, MatchViewSet, AcceptedMatchViewSet, MatchCurrentViewSet)
 
 
 from .views import home, home_files
 
+
+matches_to_play_list = MatchCurrentViewSet.as_view({'get': 'list'})
+matches_to_play_detail = MatchCurrentViewSet.as_view({'get':'retrieve'})
 
 # Router provide an easy way of automatically determining the URL conf
 router = routers.DefaultRouter()
@@ -31,6 +34,9 @@ router.register(r'teams', TeamViewSet)
 router.register(r'fields', FieldViewSet, 'fields')
 #router.register(r'trainingcompetitioncenter', TrainingCompetitionCenterViewSet)
 router.register(r'matchs', MatchViewSet)
+router.register(r'matches-to-play', MatchCurrentViewSet, 'matches-to-play')
+router.register(r'accepted-matchs', AcceptedMatchViewSet, 'accepted-matchs')
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -46,6 +52,9 @@ urlpatterns = [
 
     # url(r'^api/teams/(?P<name>[-\w. ]+)/?', include(router.urls,)),
     url(r'^api/teams/(?P<name>[-\w.]+(?:%20[-\w.]+)*)/?', include(router.urls,)),
+
+    #url(r'^api/matchs/$', MatchViewSet.as_view({'get': 'list'}), 'matchs-list'),
+
 
 
     # If you're intending to use the browsable API you'll probably also want to add REST framework's
