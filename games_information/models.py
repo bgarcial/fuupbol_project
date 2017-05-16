@@ -249,15 +249,19 @@ class Match(models.Model):
 
     )
 
-    match_date = models.DateTimeField(default=timezone.now, null=True)
+    match_date = models.DateTimeField(default=timezone.now, null=False)
 
     status_challenge = models.CharField(
         choices=STATUS_CHALLENGE_CHOICES,
         max_length=40,
-        default=True,
-        blank=False,
         verbose_name='Estado del desafío'
     )
+
+    '''
+    match_status = models.CharField(
+
+    )
+    '''
 
     home_team_players_accept = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
