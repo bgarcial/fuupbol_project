@@ -20,7 +20,7 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
     filter_fields = ('email', 'username', 'is_player', 'first_name',
-        'last_name', 'team')
+        'last_name', 'team', 'nickname')
 
     '''
     def perform_create(self, serializer):
