@@ -1,8 +1,9 @@
 import datetime as DT
 from django.shortcuts import render, get_object_or_404
+from django.utils import timezone
 
 from rest_framework import viewsets, generics
-from .serializers import (FieldSerializer, TeamSerializer, MatchSerializer, AcceptedMatchSerializer)
+from .serializers import (FieldSerializer, TeamSerializer, MatchSerializer,)
 from .models import Field, Team, Match
 from rest_framework import generics, status
 from rest_framework.response import Response
@@ -69,7 +70,9 @@ class MatchCurrentViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    today = DT.datetime.today()
+    #today = DT.datetime.today()
+    today = timezone.now()
+
     queryset = Match.objects.filter(match_date__gte=today)
     serializer_class = MatchSerializer
     filter_fields = ('home_team','away_team', 'status_challenge',

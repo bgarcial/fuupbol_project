@@ -17,15 +17,20 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from rest_framework import routers
-from userprofiles.views import (UserViewSet,)
+from userprofiles.views import (UserViewSet)
 from games_information.views import (FieldViewSet, TeamViewSet, MatchViewSet, AcceptedMatchViewSet, MatchCurrentViewSet)
 
 
 from .views import home, home_files
 
+from rest_framework.documentation import include_docs_urls
+API_TITLE = 'FichajeApp API '
+API_DESCRIPTION = 'This is the Fichaje endpoints to android and iOS mobile applications'
 
-matches_to_play_list = MatchCurrentViewSet.as_view({'get': 'list'})
-matches_to_play_detail = MatchCurrentViewSet.as_view({'get':'retrieve'})
+
+
+# matches_to_play_list = MatchCurrentViewSet.as_view({'get': 'list'})
+# matches_to_play_detail = MatchCurrentViewSet.as_view({'get':'retrieve'})
 
 # Router provide an easy way of automatically determining the URL conf
 router = routers.DefaultRouter()
@@ -36,6 +41,7 @@ router.register(r'fields', FieldViewSet, 'fields')
 router.register(r'matchs', MatchViewSet)
 router.register(r'matches-to-play', MatchCurrentViewSet, 'matches-to-play')
 router.register(r'accepted-matchs', AcceptedMatchViewSet, 'accepted-matchs')
+
 
 
 urlpatterns = [
@@ -50,6 +56,8 @@ urlpatterns = [
     # Wire up our API using automatic URL routing.
     url(r'^api/', include(router.urls,)),
 
+    #url(r'^api/forgot-password/$', UpdatePassword.as_view()),
+
     # url(r'^api/teams/(?P<name>[-\w. ]+)/?', include(router.urls,)),
     url(r'^api/teams/(?P<name>[-\w.]+(?:%20[-\w.]+)*)/?', include(router.urls,)),
 
@@ -60,6 +68,11 @@ urlpatterns = [
     # If you're intending to use the browsable API you'll probably also want to add REST framework's
     # login and logout views.
     url(r'^api-auth/', include('rest_framework.urls',
-        namespace='rest_framework'))
+        namespace='rest_framework')),
+
+    url(r'^rest-auth/', include('rest_auth.urls')),
+
+    url(r'^docs/', include_docs_urls(title=API_TITLE, description=API_DESCRIPTION))
+
 
 ]

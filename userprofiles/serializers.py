@@ -3,7 +3,7 @@ from django.db import models
 from .models import User
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
-
+from django.contrib.auth import get_user_model
 
 # Serializers define the API representation
 # Expose the model and their fields
@@ -56,6 +56,7 @@ class UserSerializer(serializers.ModelSerializer):
         return instance
     '''
 
+
     class Meta:
         model = User
         fields = ('url', 'username', 'password', 'first_name','last_name',
@@ -65,8 +66,5 @@ class UserSerializer(serializers.ModelSerializer):
                   'number_matches', 'accomplished_matches',
                   'time_available', 'leg_profile', 'number_shirt_preferred',
                   'team_support', 'player_preferred', 'last_login',)
-
-
-
 
 

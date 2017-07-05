@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     # Third party apps
     #'checkboxselectmultiple',
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
     'storages',
     #'multiselectfield',
     'django_filters',
@@ -59,9 +61,12 @@ INSTALLED_APPS = [
     'games_information.apps.GamesInformationConfig',
 ]
 
-# Read this http://www.django-rest-framework.org/topics/3.5-announcement/#djangofilterbackend
+# Read this http://www.django-rest-framework.org/topics/3.5-announcement/#djangofilterbackend and
+# http://www.django-rest-framework.org/topics/3.6-announcement/#djangofilterbackend
 REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',),
+
 
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
